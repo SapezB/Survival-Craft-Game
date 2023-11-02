@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 public class MovementScrpit : MonoBehaviour
 {
@@ -28,6 +29,11 @@ public class MovementScrpit : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+        if (Input.GetMouseButtonDown(0) )
+        {
+            animator.SetTrigger("Attack");
+        }
 
         if (Input.anyKeyDown)
         {
@@ -75,16 +81,10 @@ public class MovementScrpit : MonoBehaviour
             animator.SetBool("Backwards", true);
             animator.SetBool("Forward", false);
         }
-        else if (key == KeyCode.A)
-        {
-            animator.SetBool("Left", true);
+       
+       
+        
 
-        }
-        else if (key == KeyCode.D)
-        {
-            animator.SetBool("Right", true);
-
-        }
 
 
     }
@@ -93,20 +93,23 @@ public class MovementScrpit : MonoBehaviour
     {
         if (key == KeyCode.LeftShift)
         {
-            animator.SetBool("Sprinting", true);
-            animator.SetBool("test", true);
-            Debug.Log("speed changed");
-            speed = 10f;
+            if (animator.GetBool("test"))
+            {
+                animator.SetBool("test", false);
+                speed = 6f;
+            }
+            else
+            {
+                animator.SetBool("test", true);
+                Debug.Log("speed changed");
+                speed = 10f;
+            }
+            
+           
 
 
         }
-        else if (key == KeyCode.LeftControl)
-        {
-            animator.SetBool("Sprinting", false);
-            animator.SetBool("test", false);
-            speed = 6f;
-
-        }
+        
     }
 
 
