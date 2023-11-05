@@ -1,0 +1,691 @@
+Using pre-set license
+Built from '2023.1/staging' branch; Version is '2023.1.13f1 (ffeab063bb93) revision 16771760'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 16334 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2023.1.13f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/ihsan/OneDrive/Desktop/Uni/Modules/YEAR 3/Game Dev/Survival-Craft-Game
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+50486
+Successfully changed project path to: C:/Users/ihsan/OneDrive/Desktop/Uni/Modules/YEAR 3/Game Dev/Survival-Craft-Game
+C:/Users/ihsan/OneDrive/Desktop/Uni/Modules/YEAR 3/Game Dev/Survival-Craft-Game
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [7776] Host "[IP] 192.168.0.78 [Port] 0 [Flags] 2 [Guid] 719083400 [EditorId] 719083400 [Version] 1048832 [Id] WindowsEditor(7,HOME) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [7776] Host "[IP] 192.168.0.78 [Port] 0 [Flags] 2 [Guid] 719083400 [EditorId] 719083400 [Version] 1048832 [Id] WindowsEditor(7,HOME) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with 11 workers.
+Library Redirect Path: Library/Refreshing native plugins compatible for Editor in 29.12 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2023.1.13f1 (ffeab063bb93)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2023.1.13f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/ihsan/OneDrive/Desktop/Uni/Modules/YEAR 3/Game Dev/Survival-Craft-Game/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon RX 6600 XT (ID=0x73ff)
+    Vendor:   ATI
+    VRAM:     8147 MB
+    Driver:   31.0.12029.1042
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2023.1.13f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2023.1.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2023.1.13f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56288
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2023.1.13f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2023.1.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.018730 seconds.
+- Loaded All Assemblies, in  0.642 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+- Finished resetting the current domain, in  0.328 seconds
+Domain Reload Profiling: 948ms
+	BeginReloadAssembly (222ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (51ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (100ms)
+	LoadAllAssembliesAndSetupDomain (232ms)
+		LoadAssemblies (204ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (206ms)
+			TypeCache.Refresh (205ms)
+				TypeCache.ScanAssembly (189ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (328ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (280ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (16ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (8ms)
+			ProcessInitializeOnLoadAttributes (191ms)
+			ProcessInitializeOnLoadMethodAttributes (60ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image C:\Users\ihsan\OneDrive\Desktop\Uni\Modules\YEAR 3\Game Dev\Survival-Craft-Game\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\ihsan\OneDrive\Desktop\Uni\Modules\YEAR 3\Game Dev\Survival-Craft-Game\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.546 seconds
+Refreshing native plugins compatible for Editor in 13.99 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.782 seconds
+Domain Reload Profiling: 2302ms
+	BeginReloadAssembly (408ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (54ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (74ms)
+	LoadAllAssembliesAndSetupDomain (969ms)
+		LoadAssemblies (706ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (404ms)
+			TypeCache.Refresh (383ms)
+				TypeCache.ScanAssembly (365ms)
+			ScanForSourceGeneratedMonoScriptInfo (17ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (783ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (565ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (145ms)
+			ProcessInitializeOnLoadAttributes (344ms)
+			ProcessInitializeOnLoadMethodAttributes (23ms)
+			AfterProcessingInitializeOnLoad (36ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (11ms)
+Failed to load shader (instanceID 408, GUID 9189229324e2342b8b69f7c1904dceba)
+Failed to load shader (instanceID 430, GUID ec6c5af987867f54aa08fba81ee279bd)
+Failed to load shader (instanceID 444, GUID 6ab8493603d8f8e408750b81666a95f1)
+Failed to load shader (instanceID 446, GUID d248d4d1588851f43a9fa18a4e6f0209)
+Failed to load shader (instanceID 432, GUID 4ceb73bc148699b469361531d6062548)
+Failed to load shader (instanceID 422, GUID 7d89469544dfa214eabdbf37fca76f40)
+Failed to load shader (instanceID 424, GUID ac8ed710934a3564686a096bb351caee)
+Failed to load shader (instanceID 414, GUID 291f0d5b6045f4646847c59b4ce13ac5)
+Failed to load shader (instanceID 440, GUID e881ae5627d1cc84395303acfbca6fb2)
+Failed to load shader (instanceID 448, GUID 8ce0a6f4c8cae334d8a5617f302b6769)
+Failed to load shader (instanceID 426, GUID 965efa32cf2345647a1c987546e08f86)
+Failed to load shader (instanceID 418, GUID 4bf49309c7ab9eb42a86774d2c09b4fa)
+Failed to load shader (instanceID 412, GUID 2a72fc91cbae3cc4686a6143e8517993)
+Failed to load shader (instanceID 436, GUID 1c4298cd35ef7834e892898e49d61ecd)
+Failed to load shader (instanceID 438, GUID b1b2bfb2897659e45983f0c3e7dda2c8)
+Failed to load shader (instanceID 434, GUID 5ae1bfc1dd20ac04e8b74aa0f2f12eea)
+Failed to load shader (instanceID 416, GUID 72127ba7dd8c6b04bb3f29c7ee669813)
+Failed to load shader (instanceID 420, GUID 8b3e43c50424ab2428a9c172843bc66d)
+Failed to load shader (instanceID 428, GUID 81899cddfbc72494497a6db0ae045f2c)
+Failed to load shader (instanceID 410, GUID 11852d1b1b034654bb03e7c8fda28fbf)
+Failed to load shader (instanceID 442, GUID 607a5643efb168f429e438f7d6ad270a)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 12.74 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3105 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 33 unused Assets / (105.4 KB). Loaded Objects now: 3673.
+Memory consumption went from 139.1 MB to 139.0 MB.
+Total: 3.798500 ms (FindLiveObjects: 0.371500 ms CreateObjectMapping: 0.087000 ms MarkObjects: 3.195600 ms  DeleteObjects: 0.143400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image C:\Users\ihsan\OneDrive\Desktop\Uni\Modules\YEAR 3\Game Dev\Survival-Craft-Game\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\ihsan\OneDrive\Desktop\Uni\Modules\YEAR 3\Game Dev\Survival-Craft-Game\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.157 seconds
+Refreshing native plugins compatible for Editor in 10.16 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.473 seconds
+Domain Reload Profiling: 2605ms
+	BeginReloadAssembly (270ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (54ms)
+	LoadAllAssembliesAndSetupDomain (746ms)
+		LoadAssemblies (579ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (297ms)
+			TypeCache.Refresh (291ms)
+				TypeCache.ScanAssembly (279ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (5ms)
+	FinalizeReload (1474ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (439ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (127ms)
+			ProcessInitializeOnLoadAttributes (247ms)
+			ProcessInitializeOnLoadMethodAttributes (18ms)
+			AfterProcessingInitializeOnLoad (32ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Failed to load shader (instanceID 408, GUID 9189229324e2342b8b69f7c1904dceba)
+Failed to load shader (instanceID 430, GUID ec6c5af987867f54aa08fba81ee279bd)
+Failed to load shader (instanceID 444, GUID 6ab8493603d8f8e408750b81666a95f1)
+Failed to load shader (instanceID 446, GUID d248d4d1588851f43a9fa18a4e6f0209)
+Failed to load shader (instanceID 432, GUID 4ceb73bc148699b469361531d6062548)
+Failed to load shader (instanceID 422, GUID 7d89469544dfa214eabdbf37fca76f40)
+Failed to load shader (instanceID 424, GUID ac8ed710934a3564686a096bb351caee)
+Failed to load shader (instanceID 414, GUID 291f0d5b6045f4646847c59b4ce13ac5)
+Failed to load shader (instanceID 440, GUID e881ae5627d1cc84395303acfbca6fb2)
+Failed to load shader (instanceID 448, GUID 8ce0a6f4c8cae334d8a5617f302b6769)
+Failed to load shader (instanceID 426, GUID 965efa32cf2345647a1c987546e08f86)
+Failed to load shader (instanceID 418, GUID 4bf49309c7ab9eb42a86774d2c09b4fa)
+Failed to load shader (instanceID 412, GUID 2a72fc91cbae3cc4686a6143e8517993)
+Failed to load shader (instanceID 436, GUID 1c4298cd35ef7834e892898e49d61ecd)
+Failed to load shader (instanceID 438, GUID b1b2bfb2897659e45983f0c3e7dda2c8)
+Failed to load shader (instanceID 434, GUID 5ae1bfc1dd20ac04e8b74aa0f2f12eea)
+Failed to load shader (instanceID 416, GUID 72127ba7dd8c6b04bb3f29c7ee669813)
+Failed to load shader (instanceID 420, GUID 8b3e43c50424ab2428a9c172843bc66d)
+Failed to load shader (instanceID 428, GUID 81899cddfbc72494497a6db0ae045f2c)
+Failed to load shader (instanceID 410, GUID 11852d1b1b034654bb03e7c8fda28fbf)
+Failed to load shader (instanceID 442, GUID 607a5643efb168f429e438f7d6ad270a)
+Refreshing native plugins compatible for Editor in 26.91 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3099 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 23 unused Assets / (81.4 KB). Loaded Objects now: 3674.
+Memory consumption went from 138.0 MB to 137.9 MB.
+Total: 5.194800 ms (FindLiveObjects: 0.493600 ms CreateObjectMapping: 0.105000 ms MarkObjects: 4.430400 ms  DeleteObjects: 0.164200 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 361951.002212 seconds.
+  path: Assets/GreenForest/Prefabs/Bush2.prefab
+  artifactKey: Guid(8e0819514c986124a80f4647d7257a3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Bush2.prefab using Guid(8e0819514c986124a80f4647d7257a3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '865b909d32ff3f6fbefd844c0d8de5b9') in 0.002283 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000011 seconds.
+  path: Assets/GreenForest/Prefabs/CutedTree2.prefab
+  artifactKey: Guid(43791afa4786e804db2b10895bfad810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/CutedTree2.prefab using Guid(43791afa4786e804db2b10895bfad810) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81bd7d999e576efef1064820f7993eb3') in 0.000954 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.002618 seconds.
+  path: Assets/GreenForest/Prefabs/Oak.prefab
+  artifactKey: Guid(4e3021334b9182d4bb76f3519a517b5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Oak.prefab using Guid(4e3021334b9182d4bb76f3519a517b5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5793dd357a14461e86c84076311cebf5') in 0.001369 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/GreenForest/Prefabs/Oak1Dry.prefab
+  artifactKey: Guid(b062d3efb511d2348ad0906d66df6d7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Oak1Dry.prefab using Guid(b062d3efb511d2348ad0906d66df6d7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bec2c7cb710b05e65e563a49bd134ce') in 0.001010 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.047561 seconds.
+  path: Assets/GreenForest/Prefabs/Oak2.prefab
+  artifactKey: Guid(65ef68f3ca4cc7f4aa4fdee7422c6d9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Oak2.prefab using Guid(65ef68f3ca4cc7f4aa4fdee7422c6d9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39c72144fe55642a6afc74067b6f6f02') in 0.001805 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/GreenForest/Prefabs/Oak3Dry.prefab
+  artifactKey: Guid(01054fb40a9f9cf47a12ca28a8794a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Oak3Dry.prefab using Guid(01054fb40a9f9cf47a12ca28a8794a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a62c3032e6149de8b3a0f856c6048c8') in 0.001544 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/GreenForest/Prefabs/OakCut2.prefab
+  artifactKey: Guid(9672b079320dcb941a9222c2ac6653cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/OakCut2.prefab using Guid(9672b079320dcb941a9222c2ac6653cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f7049a46460b30eadbd2e074fca0280') in 0.001258 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/GreenForest/Prefabs/Pinetree1.prefab
+  artifactKey: Guid(a78c64f4844f99e4aa73ae88af78b199) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Pinetree1.prefab using Guid(a78c64f4844f99e4aa73ae88af78b199) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97035d1b1c0b485338cd9aa35018746a') in 0.001045 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/GreenForest/Prefabs/Pinetree2.prefab
+  artifactKey: Guid(903d0d7ce3183144d84d33c2052bbb8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Pinetree2.prefab using Guid(903d0d7ce3183144d84d33c2052bbb8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '776ac3dd6f7a40cf860e689ade43f775') in 0.001007 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/GreenForest/Prefabs/Pinetree3.prefab
+  artifactKey: Guid(6896ba8c61fa0eb4189314decf27fd1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Pinetree3.prefab using Guid(6896ba8c61fa0eb4189314decf27fd1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f334239324ff1d66f1e83056675418d') in 0.001054 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/GreenForest/Prefabs/Oak2Dry.prefab
+  artifactKey: Guid(2fabc3c6c8508ca418a92e449c8a7366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Oak2Dry.prefab using Guid(2fabc3c6c8508ca418a92e449c8a7366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c992d8f37f180f2caa084320dacdeee9') in 0.001270 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/GreenForest/Prefabs/Rock3.prefab
+  artifactKey: Guid(5aba400b67a0e37428f5bc005e68ef1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Rock3.prefab using Guid(5aba400b67a0e37428f5bc005e68ef1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c692111405822cf2b3142634145156e8') in 0.001116 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/GreenForest/Prefabs/Rock4.prefab
+  artifactKey: Guid(88c42e779d7f52249bd23d5e575dc206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Rock4.prefab using Guid(88c42e779d7f52249bd23d5e575dc206) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '52d603ae0aadfc340ba47f96949e1ca1') in 0.001044 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/GreenForest/Prefabs/Root2.prefab
+  artifactKey: Guid(c79691733e27fec4391be106a933b791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Root2.prefab using Guid(c79691733e27fec4391be106a933b791) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03e51d311deaed0855d0457a8a80d47a') in 0.001069 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/GreenForest/Prefabs/Root4.prefab
+  artifactKey: Guid(f610cff9ef34e8e45a114016266c060a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Root4.prefab using Guid(f610cff9ef34e8e45a114016266c060a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d06bee3ccfa83486a1892b46aca2127') in 0.001276 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/GreenForest/Prefabs/SmalltreeDry.prefab
+  artifactKey: Guid(bb79bad6f4330604a8985958c41b9877) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/SmalltreeDry.prefab using Guid(bb79bad6f4330604a8985958c41b9877) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '020e85319b7af42e9cdeaac300b3f1bb') in 0.001290 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/GreenForest/Prefabs/Stone1.prefab
+  artifactKey: Guid(431f2936d9470cf4a917d8653b8683ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Stone1.prefab using Guid(431f2936d9470cf4a917d8653b8683ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '623e62270bb27941bf516406c45f84b6') in 0.001083 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/GreenForest/Prefabs/Stone3.prefab
+  artifactKey: Guid(5e3bfce7cbdc3d84ca643c2678d779ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Stone3.prefab using Guid(5e3bfce7cbdc3d84ca643c2678d779ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7946ffa28b5dee4739519ed73090bf6') in 0.001234 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/GreenForest/Prefabs/Stone5.prefab
+  artifactKey: Guid(164133bbb85fb454099bc70664fc967d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Stone5.prefab using Guid(164133bbb85fb454099bc70664fc967d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a4ce948e82008bcecd14e10b420102ec') in 0.001316 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/GreenForest/Prefabs/Stone7.prefab
+  artifactKey: Guid(4595e94632dedef458066cc430f0a36d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Stone7.prefab using Guid(4595e94632dedef458066cc430f0a36d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27d670e036e1b2d91ffd582662fec142') in 0.001338 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/GreenForest/Prefabs/Stone9.prefab
+  artifactKey: Guid(e1952d018727d324dbdcf29ddf249a7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Stone9.prefab using Guid(e1952d018727d324dbdcf29ddf249a7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9493e69766e3e2507c540c07a93e3fd7') in 0.001388 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/GreenForest/Prefabs/Stone11.prefab
+  artifactKey: Guid(710d45a8c03707d41b387244fffcd5f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Stone11.prefab using Guid(710d45a8c03707d41b387244fffcd5f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '084adff45dae93f122eedab5bedaf8f4') in 0.001154 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/GreenForest/Prefabs/Stone13.prefab
+  artifactKey: Guid(4cbc4459d3e9e494f9b43b0d7c9c3cbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Stone13.prefab using Guid(4cbc4459d3e9e494f9b43b0d7c9c3cbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '023ff2906371cd2dac5a57e57be0c9e8') in 0.001118 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/GreenForest/Prefabs/Tree1.prefab
+  artifactKey: Guid(37fafbb03c8e35043953b84ba8c39664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Prefabs/Tree1.prefab using Guid(37fafbb03c8e35043953b84ba8c39664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e9d9512af5bfa0fd9d6003f4ea52233') in 0.001113 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 31.344060 seconds.
+  path: Assets/FourEvilDragonsHP/Animations/DragonUsurper/attackHand.fbx
+  artifactKey: Guid(1420a40f7b2cd1341944b103718427f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FourEvilDragonsHP/Animations/DragonUsurper/attackHand.fbx using Guid(1420a40f7b2cd1341944b103718427f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffce6e7fbfe0eef1180ff83278c54923') in 0.393701 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 249
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/FourEvilDragonsHP/Animations/DragonNightMare/Basic Attack.fbx
+  artifactKey: Guid(f882585276163954fbc547e18dea9d6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FourEvilDragonsHP/Animations/DragonNightMare/Basic Attack.fbx using Guid(f882585276163954fbc547e18dea9d6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8a12764d558bf2cfb085dfc1d90ef07') in 0.024536 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 155
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/FourEvilDragonsHP/Prefab/DragonTerrorBringer/Blue.prefab
+  artifactKey: Guid(20a769104331d8b48ac7d1ea0d49cdf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FourEvilDragonsHP/Prefab/DragonTerrorBringer/Blue.prefab using Guid(20a769104331d8b48ac7d1ea0d49cdf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a21526c1e7d3145771675fc55498cd6') in 0.140386 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 234
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/FourEvilDragonsHP/Animations/DragonTerrorBringer/Basic Attack.fbx
+  artifactKey: Guid(601b9e9a8720f834fb218a15d9f3ae63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FourEvilDragonsHP/Animations/DragonTerrorBringer/Basic Attack.fbx using Guid(601b9e9a8720f834fb218a15d9f3ae63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cc39c4f04009bca0571d6b5b48f58a15') in 0.023827 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 177
+========================================================================
+Received Import Request.
+  Time since last request: 3.917650 seconds.
+  path: Assets/GreenForest/Nature/Foliage/Oak2.FBX
+  artifactKey: Guid(21a056b9a5bc9884785d87b6eb16fe73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Nature/Foliage/Oak2.FBX using Guid(21a056b9a5bc9884785d87b6eb16fe73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba4cf8d03f098b7ab788edabdbf0829a') in 0.002072 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 6.196724 seconds.
+  path: Assets/FourEvilDragonsHP/Animations/DragonNightMare/defend.fbx
+  artifactKey: Guid(b97d7fae708615b4bab97d3197b11bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/FourEvilDragonsHP/Animations/DragonNightMare/defend.fbx using Guid(b97d7fae708615b4bab97d3197b11bf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a313059058f6897c1764058f86f68307') in 0.025977 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 155
+========================================================================
+Received Import Request.
+  Time since last request: 3.943593 seconds.
+  path: Assets/GreenForest/Nature/Modular Trees/Tree_Oak1Dry.prefab
+  artifactKey: Guid(67d1e76e91aadf6498956eb9c702353a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Nature/Modular Trees/Tree_Oak1Dry.prefab using Guid(67d1e76e91aadf6498956eb9c702353a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15c1c06bd4aa6bd63005c4f6924a8254') in 0.002456 seconds
+Internal: JobTempAlloc has allocations that are more than the maximum lifespan of 4 frames old - this is not allowed and likely a leak
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000010 seconds.
+  path: Assets/GreenForest/Nature/Modular Trees/Tree_Oak3.prefab
+  artifactKey: Guid(d96e9c974f27fb142a1859035b24d605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GreenForest/Nature/Modular Trees/Tree_Oak3.prefab using Guid(d96e9c974f27fb142a1859035b24d605) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf520d4ab7fbc98820251c826e4cfaf7') in 0.002152 seconds
+Internal: There are remaining Allocations on the JobTempAlloc. This is a leak, and will impact performance
+To Debug, run app with -diag-job-temp-memory-leak-validation cmd line argument. This will output the callstacks of the leaked allocations.
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 6)
+Internal: deleting an allocation that is older than its permitted lifetime of 4 frames (age = 6)
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+C:\build\output\Unity-Technologies\mono\mono\metadata\icall.c:1842:
+Symbol file LoadedFromMemory doesn't match image C:\Users\ihsan\OneDrive\Desktop\Uni\Modules\YEAR 3\Game Dev\Survival-Craft-Game\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\ihsan\OneDrive\Desktop\Uni\Modules\YEAR 3\Game Dev\Survival-Craft-Game\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+- Loaded All Assemblies, in  1.257 seconds
+Refreshing native plugins compatible for Editor in 9.76 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.493 seconds
+Domain Reload Profiling: 2722ms
+	BeginReloadAssembly (282ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (6ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (59ms)
+	LoadAllAssembliesAndSetupDomain (833ms)
+		LoadAssemblies (647ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (329ms)
+			TypeCache.Refresh (324ms)
+				TypeCache.ScanAssembly (309ms)
+			ScanForSourceGeneratedMonoScriptInfo (0ms)
+			ResolveRequiredComponents (4ms)
+	FinalizeReload (1493ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (455ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (142ms)
+			ProcessInitializeOnLoadAttributes (252ms)
+			ProcessInitializeOnLoadMethodAttributes (17ms)
+			AfterProcessingInitializeOnLoad (29ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Failed to load shader (instanceID 408, GUID 9189229324e2342b8b69f7c1904dceba)
+Failed to load shader (instanceID 430, GUID ec6c5af987867f54aa08fba81ee279bd)
+Failed to load shader (instanceID 444, GUID 6ab8493603d8f8e408750b81666a95f1)
+Failed to load shader (instanceID 446, GUID d248d4d1588851f43a9fa18a4e6f0209)
+Failed to load shader (instanceID 432, GUID 4ceb73bc148699b469361531d6062548)
+Failed to load shader (instanceID 422, GUID 7d89469544dfa214eabdbf37fca76f40)
+Failed to load shader (instanceID 424, GUID ac8ed710934a3564686a096bb351caee)
+Failed to load shader (instanceID 414, GUID 291f0d5b6045f4646847c59b4ce13ac5)
+Failed to load shader (instanceID 440, GUID e881ae5627d1cc84395303acfbca6fb2)
+Failed to load shader (instanceID 448, GUID 8ce0a6f4c8cae334d8a5617f302b6769)
+Failed to load shader (instanceID 426, GUID 965efa32cf2345647a1c987546e08f86)
+Failed to load shader (instanceID 418, GUID 4bf49309c7ab9eb42a86774d2c09b4fa)
+Failed to load shader (instanceID 412, GUID 2a72fc91cbae3cc4686a6143e8517993)
+Failed to load shader (instanceID 436, GUID 1c4298cd35ef7834e892898e49d61ecd)
+Failed to load shader (instanceID 438, GUID b1b2bfb2897659e45983f0c3e7dda2c8)
+Failed to load shader (instanceID 434, GUID 5ae1bfc1dd20ac04e8b74aa0f2f12eea)
+Failed to load shader (instanceID 416, GUID 72127ba7dd8c6b04bb3f29c7ee669813)
+Failed to load shader (instanceID 420, GUID 8b3e43c50424ab2428a9c172843bc66d)
+Failed to load shader (instanceID 428, GUID 81899cddfbc72494497a6db0ae045f2c)
+Failed to load shader (instanceID 410, GUID 11852d1b1b034654bb03e7c8fda28fbf)
+Failed to load shader (instanceID 442, GUID 607a5643efb168f429e438f7d6ad270a)
+Refreshing native plugins compatible for Editor in 9.70 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3098 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 22 unused Assets / (80.5 KB). Loaded Objects now: 3687.
+Memory consumption went from 146.5 MB to 146.4 MB.
+Total: 3.541100 ms (FindLiveObjects: 0.280700 ms CreateObjectMapping: 0.087100 ms MarkObjects: 3.049400 ms  DeleteObjects: 0.122900 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:CustomObjectIndexerAttribute: 756ad292c208cfabdd7b50bc23989ffe -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
