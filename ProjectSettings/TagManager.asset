@@ -6,6 +6,7 @@ TagManager:
   tags:
   - WayPoints
   - SpawnedObject
+  - Mineral
   layers:
   - Default
   - TransparentFX
