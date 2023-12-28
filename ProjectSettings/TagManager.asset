@@ -7,6 +7,7 @@ TagManager:
   - WayPoints
   - SpawnedObject
   - Mineral
+  - Tree
   layers:
   - Default
   - TransparentFX
