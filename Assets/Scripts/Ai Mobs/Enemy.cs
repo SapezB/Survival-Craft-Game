@@ -60,6 +60,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        Instantiate(ragdoll, transform.position, transform.rotation);
         Destroy(this.gameObject);
     }
 
