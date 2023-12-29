@@ -2441,11 +2441,11 @@ GameObject:
   - component: {fileID: 5438432360265890519}
   - component: {fileID: 8594232525575476552}
   - component: {fileID: 2808085362310426952}
+  - component: {fileID: 2995334647773637703}
   - component: {fileID: 481445483872405269}
   - component: {fileID: 64307171782844589}
   - component: {fileID: 5186968630360531321}
   - component: {fileID: 8233864834883531676}
-  - component: {fileID: 918452405869899541}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -2500,17 +2500,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3946621903769824462}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f19c3d411ca19ac419fdf494c585b096, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHunger: 100
   hungerDepletionRate: 1
+  healthText: {fileID: 0}
   maxHealth: 100
   healthDepletionRate: 1
   damagePerHit: 10
   currentHealth: 100
+--- !u!114 &2995334647773637703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3946621903769824462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d239aff1b7b5cbb4fa64f4db8a6874c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
+  ragdoll: {fileID: 0}
 --- !u!114 &481445483872405269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2560,8 +2576,8 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 1.8
+  m_Radius: 0.41
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
@@ -2606,27 +2622,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponHolder: {fileID: 3347401492834745639}
   weapon: {fileID: 4061207243413043463}
---- !u!65 &918452405869899541
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3946621903769824462}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 0.93379676, z: 1}
-  m_Center: {x: 0, y: 1.3159006, z: 0}
 --- !u!1 &4060589554500306333
 GameObject:
   m_ObjectHideFlags: 0

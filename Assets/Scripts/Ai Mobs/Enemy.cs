@@ -67,6 +67,7 @@ public class Enemy : MonoBehaviour
     {
         health -= damageAmount;
         animator.SetTrigger("damage");
+       
 
         if (health <= 0)
         {
@@ -83,11 +84,11 @@ public class Enemy : MonoBehaviour
         GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
     }
 
-    //public void HitVFX(Vector3 hitPosition)
-    //{
-        //GameObject hit = Instantiate(hitVFX, hitPosition, Quaternion.identity);
-        //Destroy(hit, 3f);
-    //}
+    public void HitVFX(Vector3 hitPosition)
+    {
+        GameObject hit = Instantiate(hitVFX, hitPosition, Quaternion.identity);
+        Destroy(hit, 3f);
+    }
 
     private void OnDrawGizmos()
     {
