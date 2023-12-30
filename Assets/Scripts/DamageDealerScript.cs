@@ -23,19 +23,26 @@ public class DamageDealerScript : MonoBehaviour
         if (canDealDamage)
         {
             RaycastHit hit;
-
-            int layerMask = 1 << 7;
+            int layerMask = 1 << 7; // Make sure your passive mobs are on this layer
             if (Physics.Raycast(transform.position, -transform.up, out hit, weaponLength, layerMask))
             {
-                if (hit.transform.TryGetComponent(out Enemy enemy) && !hasDealtDamage.Contains(hit.transform.gameObject))
+                if (!hasDealtDamage.Contains(hit.transform.gameObject))
                 {
-                    enemy.TakeDamage(weaponDamage);
-
-                    hasDealtDamage.Add(hit.transform.gameObject);
+                    if (hit.transform.TryGetComponent(out Enemy enemy))
+                    {
+                        enemy.TakeDamage(weaponDamage);
+                        hasDealtDamage.Add(hit.transform.gameObject);
+                    }
+                    else if (hit.transform.TryGetComponent(out PassiveEnemy passiveEnemy))
+                    {
+                        passiveEnemy.TakeDamage(weaponDamage);
+                        hasDealtDamage.Add(hit.transform.gameObject);
+                    }
                 }
             }
         }
     }
+
 
     public void StartDealDamage()
     {
