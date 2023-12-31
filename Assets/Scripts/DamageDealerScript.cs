@@ -38,6 +38,11 @@ public class DamageDealerScript : MonoBehaviour
                         passiveEnemy.TakeDamage(weaponDamage);
                         hasDealtDamage.Add(hit.transform.gameObject);
                     }
+                    else if (hit.transform.TryGetComponent(out BearEnemy bearEnemy))
+                    {
+                        bearEnemy.TakeDamage(weaponDamage);
+                        hasDealtDamage.Add(hit.transform.gameObject);
+                    }
                 }
             }
         }

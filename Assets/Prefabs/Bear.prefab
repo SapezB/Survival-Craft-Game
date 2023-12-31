@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c319e8843b35442ab92bdf66a28e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponLength: 3
+  weaponLength: 2.5
   weaponDamage: 10
 --- !u!1 &372943108286602132
 GameObject:
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c319e8843b35442ab92bdf66a28e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponLength: 3
+  weaponLength: 2.5
   weaponDamage: 10
 --- !u!1 &1854231097574841664
 GameObject:

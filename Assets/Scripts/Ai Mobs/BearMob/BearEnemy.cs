@@ -6,143 +6,86 @@ using UnityEngine.AI;
 
 public class BearEnemy : MonoBehaviour
 {
-    [SerializeField] private float health = 100;
-    [SerializeField] private GameObject hitVFX;
-    [SerializeField] private GameObject ragdoll;
+    [SerializeField] float health = 3;
+    [SerializeField] GameObject hitVFX;
+    [SerializeField] GameObject ragdoll;
 
     [Header("Combat")]
-    [SerializeField] private float attackCD = 3f;
-    [SerializeField] private float attackRange = 1f;
-    [SerializeField] private float aggroRange = 4f;
-    [SerializeField] private float attackDamage = 10f; // Add attack damage
+    [SerializeField] float attackCD = 3f;
+    [SerializeField] float attackRange = 1f;
+    [SerializeField] float aggroRange = 4f;
 
-    private GameObject player;
-    private NavMeshAgent agent;
-    private Animator animator;
-    private float timePassed;
-    private bool isStunned = false;
-    private bool isDead = false;
-    private int attackCounter = 0;
-    private EnemyDamageDealer damageDealer;
+    private bool hasDied = false;
+    GameObject player;
+    NavMeshAgent agent;
+    Animator animator;
+    float timePassed;
+    float newDestinationCD = 0.5f;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
-        damageDealer = GetComponentInChildren<EnemyDamageDealer>(); // Assumes EnemyDamageDealer is a child
-
-        // Start with the bear sleeping
-        animator.Play("Bear_Sleep");
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (isDead) return;
+        animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
 
-        if (health <= 0)
+        if (player == null)
         {
-            Die();
             return;
         }
 
-        float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
-
-        if (!isStunned)
+        if (timePassed >= attackCD)
         {
-            HandleMovementAndAttacks(distanceToPlayer);
+            if (Vector3.Distance(player.transform.position, transform.position) <= attackRange)
+            {
+                animator.SetTrigger("attack");
+                timePassed = 0;
+            }
         }
-        else
-        {
-            HandleStun();
-        }
-
         timePassed += Time.deltaTime;
-    }
 
-    private void HandleMovementAndAttacks(float distanceToPlayer)
-    {
-        if (distanceToPlayer <= aggroRange && animator.GetCurrentAnimatorStateInfo(0).IsName("Bear_Sleep"))
+        if (newDestinationCD <= 0 && Vector3.Distance(player.transform.position, transform.position) <= aggroRange)
         {
-            animator.Play("Bear_Buff");
-            StartCoroutine(WaitAndRun(2f)); // Wait for 2 seconds before running
-        }
-        else if (distanceToPlayer <= attackRange && timePassed >= attackCD)
-        {
-            AttackPlayer();
-            timePassed = 0;
-        }
-        else if (distanceToPlayer <= aggroRange)
-        {
+            newDestinationCD = 0.5f;
             agent.SetDestination(player.transform.position);
-            animator.Play("Bear_RunForward");
         }
-    }
-
-    private IEnumerator WaitAndRun(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        animator.Play("Bear_RunForward");
-    }
-
-    private void HandleStun()
-    {
-        if (timePassed >= 5f) // Stunned for 5 seconds
-        {
-            isStunned = false;
-            animator.Play("Bear_Buff");
-            attackCD -= 0.5f; // Increase attack speed
-            timePassed = 0;
-        }
-        else
-        {
-            timePassed += Time.deltaTime;
-        }
-    }
-
-    private void AttackPlayer()
-    {
-        if (attackCounter < 2)
-        {
-            animator.Play("Bear_Attack1");
-            damageDealer.StartDealDamage(); // Start dealing damage
-            attackCounter++;
-        }
-        else
-        {
-            animator.Play("Bear_Attack5");
-            damageDealer.StartDealDamage(); // Start dealing damage
-            attackCounter = 0;
-        }
-    }
-
-    public void EndAttack()
-    {
-        damageDealer.EndDealDamage(); // End dealing damage
+        newDestinationCD -= Time.deltaTime;
+        transform.LookAt(player.transform);
     }
 
 
     private void Die()
     {
-        animator.Play("Bear_Death");
-        isDead = true;
-        Destroy(gameObject, 3f); // Adjust delay as needed
+        if (hasDied) return;
+        animator.SetTrigger("death"); // Trigger death animation using a trigger
+        agent.isStopped = true; // Stop the NavMeshAgent
+        hasDied = true;
+
+        StartCoroutine(DestroyAfterDelay(3.5f)); // Adjust the time to match the length of the death animation
     }
 
+    private IEnumerator DestroyAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Destroy(this.gameObject);
+    }
     public void TakeDamage(float damageAmount)
     {
-        if (isDead) return;
-
+        if (hasDied) return;
         health -= damageAmount;
-        animator.Play("Bear_GetHitFromFront");
+        animator.SetTrigger("damage");
+       
 
-        if (health <= 50 && !isStunned)
+        if (health <= 0)
         {
-            isStunned = true;
-            animator.Play("Bear_StunnedLoop");
-            timePassed = 0;
+            Die();
         }
     }
-
 
     public void StartDealDamage()
     {
@@ -153,11 +96,11 @@ public class BearEnemy : MonoBehaviour
         GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
     }
 
-    //public void HitVFX(Vector3 hitPosition)
-    //{
-    //GameObject hit = Instantiate(hitVFX, hitPosition, Quaternion.identity);
-    //Destroy(hit, 3f);
-    //}
+    public void HitVFX(Vector3 hitPosition)
+    {
+        GameObject hit = Instantiate(hitVFX, hitPosition, Quaternion.identity);
+        Destroy(hit, 3f);
+    }
 
     private void OnDrawGizmos()
     {
@@ -167,7 +110,3 @@ public class BearEnemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, aggroRange);
     }
 }
-
-    // Existing functions StartDealDamage, EndDealDamage, HitVFX, OnDrawGizmos can remain as they are
-
-
