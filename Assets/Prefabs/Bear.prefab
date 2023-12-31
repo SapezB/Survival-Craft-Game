@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 351712471805873228}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0000004982574, y: -0.000000036554397, z: -0.6937158, w: 0.72024894}
-  m_LocalPosition: {x: 0.451, y: 0.018, z: 0}
+  m_LocalPosition: {x: 1.345, y: 0.052, z: -0}
   m_LocalScale: {x: 1, y: 3.3316646, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c319e8843b35442ab92bdf66a28e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponLength: 2.5
+  weaponLength: 5
   weaponDamage: 10
 --- !u!1 &372943108286602132
 GameObject:
@@ -512,7 +512,7 @@ Transform:
   m_GameObject: {fileID: 1819026595971014271}
   serializedVersion: 2
   m_LocalRotation: {x: -0.028489863, y: -0.0626255, z: 0.7220743, w: 0.68838596}
-  m_LocalPosition: {x: -0.368, y: -0.032, z: -0.024}
+  m_LocalPosition: {x: -1.08, y: -0.064, z: -0.117}
   m_LocalScale: {x: 1, y: 3.3316658, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7c319e8843b35442ab92bdf66a28e30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponLength: 2.5
+  weaponLength: 5
   weaponDamage: 10
 --- !u!1 &1854231097574841664
 GameObject:

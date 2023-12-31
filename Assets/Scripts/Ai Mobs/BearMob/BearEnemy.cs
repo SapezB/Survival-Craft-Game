@@ -6,57 +6,83 @@ using UnityEngine.AI;
 
 public class BearEnemy : MonoBehaviour
 {
-    [SerializeField] float health = 3;
-    [SerializeField] GameObject hitVFX;
-    [SerializeField] GameObject ragdoll;
+    [SerializeField] private float health = 3;
+    [SerializeField] private GameObject hitVFX;
 
     [Header("Combat")]
-    [SerializeField] float attackCD = 3f;
-    [SerializeField] float attackRange = 1f;
-    [SerializeField] float aggroRange = 4f;
+    [SerializeField] private float attackCD = 3f;
+    [SerializeField] private float attackRange = 1f;
+    [SerializeField] private float aggroRange = 4f;
 
     private bool hasDied = false;
-    GameObject player;
-    NavMeshAgent agent;
-    Animator animator;
-    float timePassed;
-    float newDestinationCD = 0.5f;
+    private GameObject player;
+    private NavMeshAgent agent;
+    private Animator animator;
+    private float timePassed;
+    private bool isSleeping = true;
 
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
+        animator.SetBool("isSleeping", true); // Start with the bear sleeping
     }
 
-    // Update is called once per frame
     void Update()
     {
         animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
 
-        if (player == null)
+        if (player == null || hasDied)
         {
             return;
         }
 
-        if (timePassed >= attackCD)
+        float distanceToPlayer = Vector3.Distance(player.transform.position, transform.position);
+
+        if (distanceToPlayer <= aggroRange)
         {
-            if (Vector3.Distance(player.transform.position, transform.position) <= attackRange)
+            if (isSleeping)
             {
-                animator.SetTrigger("attack");
-                timePassed = 0;
+                animator.SetTrigger("buff"); // Trigger buff animation
+                animator.SetBool("isSleeping", false);
+                isSleeping = false;
             }
+
+            // Bear looks at and moves towards the player
+            LookAtPlayer();
+            agent.SetDestination(player.transform.position);
+
+            AttemptAttack(distanceToPlayer);
+        }
+        else if (!isSleeping)
+        {
+            animator.SetBool("isSleeping", true); // Go back to sleeping state
+            isSleeping = true;
+            agent.ResetPath(); // Stop the bear from moving
+        }
+    }
+
+    private void LookAtPlayer()
+    {
+        // Optionally, you can adjust this to only rotate on the Y axis
+        Vector3 direction = (player.transform.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+
+    private void AttemptAttack(float distanceToPlayer)
+    {
+        if (timePassed >= attackCD && distanceToPlayer <= attackRange)
+        {
+            animator.SetTrigger("attack");
+            timePassed = 0;
         }
         timePassed += Time.deltaTime;
-
-        if (newDestinationCD <= 0 && Vector3.Distance(player.transform.position, transform.position) <= aggroRange)
-        {
-            newDestinationCD = 0.5f;
-            agent.SetDestination(player.transform.position);
-        }
-        newDestinationCD -= Time.deltaTime;
-        transform.LookAt(player.transform);
     }
+
+    // Call this method using an Animation Event at the end of the buff animation
+  
 
 
     private void Die()
