@@ -20,6 +20,7 @@ public class BearEnemy : MonoBehaviour
     private Animator animator;
     private float timePassed;
     private bool isSleeping = true;
+    private bool canMove = true; // Added to control movement after buff
 
     void Start()
     {
@@ -28,6 +29,8 @@ public class BearEnemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         animator.SetBool("isSleeping", true); // Start with the bear sleeping
     }
+
+    private bool isAggroed = false; // New variable to track if bear is aggroed
 
     void Update()
     {
@@ -44,31 +47,45 @@ public class BearEnemy : MonoBehaviour
         {
             if (isSleeping)
             {
-                animator.SetTrigger("buff"); // Trigger buff animation
-                animator.SetBool("isSleeping", false);
                 isSleeping = false;
+                isAggroed = true;
+                animator.SetBool("isSleeping", false);
+                LookAtPlayer(); // First, turn towards the player
+                StartCoroutine(PerformBuff()); // Then perform buff
             }
 
-            // Bear looks at and moves towards the player
-            LookAtPlayer();
-            agent.SetDestination(player.transform.position);
-
-            AttemptAttack(distanceToPlayer);
+            if (canMove)
+            {
+                LookAtPlayer();
+                agent.SetDestination(player.transform.position); // Move towards player
+                AttemptAttack(distanceToPlayer);
+            }
         }
         else if (!isSleeping)
         {
-            animator.SetBool("isSleeping", true); // Go back to sleeping state
+            // Reset to sleeping state if player leaves aggro range
+            isAggroed = false;
+            animator.SetBool("isSleeping", true);
             isSleeping = true;
-            agent.ResetPath(); // Stop the bear from moving
+            canMove = true;
+            agent.ResetPath();
         }
+    }
+
+    private IEnumerator PerformBuff()
+    {
+        animator.SetTrigger("buff");
+        canMove = false;
+        yield return new WaitForSeconds(2f); // Duration of the buff animation
+        canMove = true;
+        // Transition to combat idle here if needed
     }
 
     private void LookAtPlayer()
     {
-        // Optionally, you can adjust this to only rotate on the Y axis
         Vector3 direction = (player.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f); // Smooth rotation
     }
 
     private void AttemptAttack(float distanceToPlayer)
@@ -82,7 +99,7 @@ public class BearEnemy : MonoBehaviour
     }
 
     // Call this method using an Animation Event at the end of the buff animation
-  
+
 
 
     private void Die()
@@ -105,7 +122,7 @@ public class BearEnemy : MonoBehaviour
         if (hasDied) return;
         health -= damageAmount;
         animator.SetTrigger("damage");
-       
+
 
         if (health <= 0)
         {
