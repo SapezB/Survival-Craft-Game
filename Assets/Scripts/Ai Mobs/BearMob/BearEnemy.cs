@@ -132,11 +132,11 @@ public class BearEnemy : MonoBehaviour
 
     public void StartDealDamage()
     {
-        GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
+        GetComponentInChildren<BearDamageDealer>().StartDealDamage();
     }
     public void EndDealDamage()
     {
-        GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
+        GetComponentInChildren<BearDamageDealer>().EndDealDamage();
     }
 
     public void HitVFX(Vector3 hitPosition)
