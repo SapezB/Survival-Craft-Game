@@ -21,6 +21,7 @@ public class BarbarianEnemy : MonoBehaviour
     float timePassed;
     float newDestinationCD = 0.5f;
     private bool hasDied = false;
+    private int axeAttackCount = 0;
 
     void Start()
     {
@@ -43,7 +44,16 @@ public class BarbarianEnemy : MonoBehaviour
         {
             if (Vector3.Distance(player.transform.position, transform.position) <= attackRange)
             {
-                animator.SetTrigger("attack");
+                if (axeAttackCount >= 2)
+                {
+                    animator.SetTrigger("shieldattack"); // Trigger shield attack animation
+                    axeAttackCount = 0; // Reset the axe attack counter
+                }
+                else
+                {
+                    animator.SetTrigger("attack"); // Regular axe attack
+                    axeAttackCount++; // Increment axe attack counter
+                }
                 timePassed = 0;
             }
         }
@@ -91,10 +101,12 @@ public class BarbarianEnemy : MonoBehaviour
     public void StartDealDamage()
     {
         GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
+        GetComponentInChildren<ShieldDamageDealer>().StartDealDamage();
     }
     public void EndDealDamage()
     {
         GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
+        GetComponentInChildren<ShieldDamageDealer>().EndDealDamage();
     }
 
     public void HitVFX(Vector3 hitPosition)
