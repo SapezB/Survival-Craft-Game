@@ -83,9 +83,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.35
-  m_Height: 1.8
+  m_Height: 1.8845173
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 0.857742, z: 0}
 --- !u!114 &7107980912998745189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
-  ragdoll: {fileID: 0}
+  ragdoll: {fileID: 463838689969216443, guid: dfa1599583c761c408afc52041b6c509, type: 3}
   attackCD: 2
   attackRange: 3.1
   aggroRange: 20
