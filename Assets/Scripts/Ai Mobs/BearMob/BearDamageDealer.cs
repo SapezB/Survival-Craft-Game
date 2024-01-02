@@ -14,8 +14,9 @@ public class BearDamageDealer : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(clawDamage); // Apply damage to the player
+                Vector3 hitPosition = other.ClosestPointOnBounds(this.transform.position);
                 // If you have a HitVFX method in HealthSystem, you can call it here
-                // playerHealth.HitVFX(this.transform.position);
+                playerHealth.HitVFX(this.transform.position);
             }
 
             canDealDamage = false; // Reset flag to avoid multiple hits in one attack
