@@ -619,11 +619,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006549c71fe8c434a892cfe0a364d746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  maxHealth: 3
   hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
   attackCD: 3
   attackRange: 1
   aggroRange: 4
+  rotationSpeed: 5
 --- !u!4 &6604637148934927323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400362, guid: 859c3def7b0fdca4ba4a59bb97a3cb47, type: 3}
@@ -910,8 +911,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldDamage: 10
-  knockbackForce: 1000
-  knockbackDuration: 2
+  knockbackForce: 10
+  knockbackDuration: 0.5
 --- !u!65 &1206876230346640524
 BoxCollider:
   m_ObjectHideFlags: 0
