@@ -5,6 +5,8 @@ using UnityEngine;
 public class SoundTrigger : MonoBehaviour
 {
     private AudioSource audioSource;
+    private bool isOn = false;
+
 
     void Start()
     {
@@ -13,9 +15,14 @@ public class SoundTrigger : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == ("Player") &&  !audioSource.isPlaying) // Check if the colliding object is the player
+        if (other.tag == ("Player") && !audioSource.isPlaying && !isOn) // Check if the colliding object is the player
         {
             audioSource.Play(); // Play the audio
+            isOn = true;
+        }
+        else if (other.tag == ("Player") && audioSource.isPlaying && isOn == true)
+        {
+            audioSource.Stop();
         }
     }
 }
