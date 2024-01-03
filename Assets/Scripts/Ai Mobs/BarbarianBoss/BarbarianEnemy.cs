@@ -58,6 +58,7 @@ public class BarbarianEnemy : MonoBehaviour
             {
                 if (axeAttackCount >= 2)
                 {
+                    transform.LookAt(transform.position);
                     animator.SetTrigger("shieldattack"); // Trigger shield attack animation
                     axeAttackCount = 0; // Reset the axe attack counter
                 }
