@@ -23,6 +23,7 @@ public class SoundTrigger : MonoBehaviour
         else if (other.tag == ("Player") && audioSource.isPlaying && isOn == true)
         {
             audioSource.Stop();
+            isOn = false;
         }
     }
 }

@@ -30,7 +30,7 @@ public class BearEnemy : MonoBehaviour
         animator.SetBool("isSleeping", true); // Start with the bear sleeping
     }
 
-    private bool isAggroed = false; // New variable to track if bear is aggroed
+    
 
     void Update()
     {
@@ -48,7 +48,7 @@ public class BearEnemy : MonoBehaviour
             if (isSleeping)
             {
                 isSleeping = false;
-                isAggroed = true;
+                
                 animator.SetBool("isSleeping", false);
                 LookAtPlayer(); // First, turn towards the player
                 StartCoroutine(PerformBuff()); // Then perform buff
@@ -64,7 +64,7 @@ public class BearEnemy : MonoBehaviour
         else if (!isSleeping)
         {
             // Reset to sleeping state if player leaves aggro range
-            isAggroed = false;
+            
             animator.SetBool("isSleeping", true);
             isSleeping = true;
             canMove = true;
