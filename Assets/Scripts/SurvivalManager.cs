@@ -28,7 +28,7 @@ public class SurvivalManager : MonoBehaviour
     {
      
         currentHealth = maxHealth;
-        healthText.text = "Health : " + currentHealth.ToString();
+    
 
     }
 
