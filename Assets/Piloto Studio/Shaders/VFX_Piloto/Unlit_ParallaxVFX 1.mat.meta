@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 5048f78632d81944b85ac7ff7b69304a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 258376
+  packageName: Piloto Studio Shaders
+  packageVersion: 1.1
+  assetPath: Assets/Piloto Studio/Shaders/VFX_Piloto/Unlit_ParallaxVFX 1.mat
+  uploadId: 634344
