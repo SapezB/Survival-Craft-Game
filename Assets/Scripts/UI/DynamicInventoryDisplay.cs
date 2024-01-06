@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using System;
 
 public class DynamicInvetoryDisplay : InventoryDisplay
 {
@@ -36,9 +38,10 @@ public class DynamicInvetoryDisplay : InventoryDisplay
 
         for (int i = 0; i < invToDisplay.InventorySize; i++)
         {
+            print(i);
             var uiSlot = Instantiate(slotPrefab, transform);
-            Slots.Add(uiSlot, invToDisplay.Slots[i]);
-            uiSlot.Init(invToDisplay.Slots[i]);
+            Slots.Add(uiSlot, invToDisplay.slots[i]);
+            uiSlot.Init(invToDisplay.slots[i]);
             uiSlot.UpdateUISlot();
         }
     }
@@ -52,9 +55,9 @@ public class DynamicInvetoryDisplay : InventoryDisplay
 
         }
 
-        if (SlotDictionary != null)
+        if (Slots != null)
         {
-            SlotDictionary.Clear();
+            Slots.Clear();
         }
     }
 

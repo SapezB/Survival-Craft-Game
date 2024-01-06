@@ -24,8 +24,8 @@ public class StaticInvetoryDisplay : InventoryDisplay
 
         for (int i = 0; i< inventorySystem.InventorySize; i++)
         {
-            SlotDictionary.Add(slots[i], inventorySystem.Slots[i]);
-            slots[i].Init(inventorySystem.Slots[i]);
+            SlotDictionary.Add(slots[i], inventorySystem.slots[i]);
+            slots[i].Init(inventorySystem.slots[i]);
 
         }
 

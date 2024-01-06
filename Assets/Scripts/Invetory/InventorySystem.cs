@@ -13,7 +13,7 @@ public class InventorySystem
     
 
 
-    public List<Slot> Slots => inventorySlots;
+    public List<Slot> slots => inventorySlots;
 
     public int InventorySize => inventorySlots.Count;
 
