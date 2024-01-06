@@ -76,8 +76,8 @@ ModelImporter:
       name: MeeleeAttack_TwoHanded
       takeName: MeeleeAttack_TwoHanded
       internalID: 0
-      firstFrame: 2
-      lastFrame: 60
+      firstFrame: 15
+      lastFrame: 33
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -97,15 +97,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.5409513
-        functionName: EndDealDamage
+      - time: 0.36683416
+        functionName: StartDealDamage
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.36683416
-        functionName: StartDealDamage
+      - time: 0.6790588
+        functionName: EndDealDamage
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
