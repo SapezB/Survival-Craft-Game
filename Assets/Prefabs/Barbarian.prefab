@@ -911,8 +911,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldDamage: 10
-  knockbackForce: 1000
-  knockbackDuration: 10
+  knockbackForce: 10000
+  knockbackDuration: 4
 --- !u!65 &1206876230346640524
 BoxCollider:
   m_ObjectHideFlags: 0
