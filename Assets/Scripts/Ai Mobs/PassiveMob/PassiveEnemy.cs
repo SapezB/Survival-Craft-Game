@@ -75,7 +75,7 @@ public class PassiveEnemy : MonoBehaviour
         animator.SetTrigger("death"); // Trigger death animation using a trigger
         agent.isStopped = true; // Stop the NavMeshAgent
         hasDied = true;
-
+        GetComponent<LootBag>().InstantitateLoot(transform.position);
         StartCoroutine(DestroyAfterDelay(2f)); // Adjust the time to match the length of the death animation
     }
 
