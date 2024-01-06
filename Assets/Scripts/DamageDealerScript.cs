@@ -53,13 +53,12 @@ public class DamageDealerScript : MonoBehaviour
                     //     tree.TakeDamage(weaponDamage);
                     //     hasDealtDamage.Add(hit.transform.gameObject);
                     // }
-                    else{
-                        objectTag = hit.collider.gameObject.tag;
-                        switch(objectTag){
-                            case "Tree":
-                                print("Hit");
-                        }
-                    }
+                    //else if{ objectTag = hit.collider.gameObject.tag;
+                        //switch(objectTag){
+                            //case "Tree":
+                                //print("Hit");
+                        //}
+                    //}
                 }
             }
         }
