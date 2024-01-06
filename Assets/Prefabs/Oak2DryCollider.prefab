@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1980878288491371561}
   - component: {fileID: 3087921913189521426}
   - component: {fileID: 7616091010049342944}
-  m_Layer: 0
+  - component: {fileID: 2883772660539401709}
+  m_Layer: 7
   m_Name: Oak2DryCollider
   m_TagString: Tree
   m_Icon: {fileID: 0}
@@ -107,3 +108,16 @@ CapsuleCollider:
   m_Height: 37.129257
   m_Direction: 1
   m_Center: {x: 0.27, y: 17.652985, z: 0.04}
+--- !u!114 &2883772660539401709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7353199080270897384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7bdaaa583bfb45a08717c5df21e1ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
