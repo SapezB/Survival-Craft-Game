@@ -15,7 +15,7 @@ public class LightManager : MonoBehaviour
 
     private void Start() {
         TimeOfDay = 10;
-        numDays = 0;
+        numDays = 1;
         dayIncremented = false;
     }
 
