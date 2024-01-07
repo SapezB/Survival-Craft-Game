@@ -76,8 +76,8 @@ ModelImporter:
       name: GetHit
       takeName: GetHit
       internalID: 0
-      firstFrame: 2
-      lastFrame: 42
+      firstFrame: 5
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -100,7 +100,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 2
     isReadable: 0
   meshes:
     lODScreenPercentages: []

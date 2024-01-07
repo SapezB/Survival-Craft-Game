@@ -17,6 +17,7 @@ public class BearEnemy : MonoBehaviour
     [SerializeField] private float aggroRange = 4f;
 
     private float health;
+    private int hitCounter = 0;
     private bool hasDied = false;
     private GameObject player;
     private NavMeshAgent agent;
@@ -127,10 +128,17 @@ public class BearEnemy : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         if (hasDied) return;
+
         health -= damageAmount;
         _healthBar.UpdateHealthBar(maxHealth, health);
-        animator.SetTrigger("damage");
 
+        hitCounter++; // Increment hit counter
+
+        if (hitCounter >= 3)
+        {
+            animator.SetTrigger("damage"); // Perform damage animation every third hit
+            hitCounter = 0; // Reset hit counter
+        }
 
         if (health <= 0)
         {

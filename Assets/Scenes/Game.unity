@@ -9757,6 +9757,10 @@ PrefabInstance:
       value: Bear
       objectReference: {fileID: 0}
     - target: {fileID: 5013574618582008652, guid: 082d6fba5c3ba3f44bf17170fc07c3fa, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013574618582008652, guid: 082d6fba5c3ba3f44bf17170fc07c3fa, type: 3}
       propertyPath: _healthBar
       value: 
       objectReference: {fileID: 406522064}
