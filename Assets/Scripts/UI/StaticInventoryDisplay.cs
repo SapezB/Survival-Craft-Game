@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StaticInvetoryDisplay : InventoryDisplay
+public class StaticInventoryDisplay : InventoryDisplay
 {
     [SerializeField] private Holder invetoryHolder;
-    [SerializeField] private UISlot[] slots;
+    [SerializeField] protected UISlot[] slots;
     protected override void Start()
     {
         base.Start();
         
         if(invetoryHolder != null)
         {
-            inventorySystem = invetoryHolder.InvetorySystem;
+            inventorySystem = invetoryHolder.PrimaryInvetorySystem;
             inventorySystem.onInvetorySlotChanged += UpdateSlot;
         }
 
@@ -30,4 +30,6 @@ public class StaticInvetoryDisplay : InventoryDisplay
         }
 
     }
+
+ 
 }

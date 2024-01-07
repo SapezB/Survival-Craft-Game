@@ -9,7 +9,7 @@ public class ChestInventory : Holder, IInteractable
 
     public void Interact(Interactor interactor, out bool interactSucessful)
     {
-        OnDynamicInvetoryDisplayRequested?.Invoke(inventorySystem);
+        OnDynamicInvetoryDisplayRequested?.Invoke(primaryInventorySystem);
         interactSucessful = true; 
     }
 

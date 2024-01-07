@@ -23,6 +23,7 @@ public class DynamicInvetoryDisplay : InventoryDisplay
     {
         ClearSlots();
         inventorySystem = invToDisplay;
+        if(inventorySystem != null) inventorySystem.onInvetorySlotChanged += UpdateSlot;
         AssignSlot(invToDisplay);
     }
 
@@ -61,5 +62,9 @@ public class DynamicInvetoryDisplay : InventoryDisplay
         }
     }
 
+    private void OnDisable()
+    {
+        if (inventorySystem != null) inventorySystem.onInvetorySlotChanged -= UpdateSlot;
+    }
 
 }

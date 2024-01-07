@@ -1,8 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Linq;
 
 
 [System.Serializable]
@@ -30,7 +29,7 @@ public class InventorySystem
         }
     }
 
-    public bool AddToInvetory(ItemData itemToAdd,  int amountToadd)
+    public bool AddToInventory(ItemData itemToAdd,  int amountToadd)
     {
       if (ContainsItem(itemToAdd, out List<Slot> invSlot))
         {
