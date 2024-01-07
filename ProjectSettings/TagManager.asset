@@ -8,6 +8,8 @@ TagManager:
   - SpawnedObject
   - Mineral
   - Tree
+  - SpawnedPassive
+  - SpawnedEnemy
   layers:
   - Default
   - TransparentFX

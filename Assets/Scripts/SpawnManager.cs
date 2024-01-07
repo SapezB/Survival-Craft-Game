@@ -1,16 +1,22 @@
 using System.Globalization;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject objectToSpawn;
-    public DayNightCycles daytime;
+    public GameObject skeleton;
+    public GameObject sheep;
+    public GameObject goat;
+    public LightManager daytime;
     public Vector3 spawnAreaCenter;  
     public Vector3 spawnAreaSize;    
-    public int maxSpawnCount = 10 ;   
+    public int maxEnemy = 10 ;   
+    public int maxPassive = 30 ; 
     public float spawnInterval = 5f;
     public bool spawnOnStart = true; // Whether to start spawning objects immediately
-    int currDay = 1;
+    private int currDay = 0;
+    [SerializeField] private bool night;
+    private List<GameObject> spawnedEnemies = new List<GameObject>();
 
     private void Start()
     {
@@ -22,10 +28,19 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
-       if(currDay < daytime.dayCount)
+       if(currDay < daytime.numDays)
         {
-            currDay = daytime.dayCount;
-            maxSpawnCount = (int)Mathf.Round(maxSpawnCount * 1.5f);
+            currDay = daytime.numDays;
+            maxEnemy = (int)Mathf.Round(maxEnemy * 1.5f);
+        }
+        if(daytime.currTime < 4  || daytime.currTime >= 20 ){
+            night = true;
+        }
+        else{
+            night = false;
+            foreach(var enemy in spawnedEnemies){
+                Destroy(enemy);
+            }
         }
     }
 
@@ -41,15 +56,24 @@ public class SpawnManager : MonoBehaviour
 
     private void SpawnObject()
     {
-        if (maxSpawnCount <= 0 || GameObject.FindGameObjectsWithTag("SpawnedObject").Length < maxSpawnCount)
-        {
-            Vector3 randomPosition = new Vector3(
-                Random.Range(spawnAreaCenter.x - spawnAreaSize.x / 2, spawnAreaCenter.x + spawnAreaSize.x / 2),
-                Random.Range(spawnAreaCenter.y - spawnAreaSize.y / 2, spawnAreaCenter.y + spawnAreaSize.y / 2),
-                Random.Range(spawnAreaCenter.z - spawnAreaSize.z / 2, spawnAreaCenter.z + spawnAreaSize.z / 2)
-            );
+        Vector3 randomPosition = new Vector3(
+        Random.Range(spawnAreaCenter.x - spawnAreaSize.x / 2, spawnAreaCenter.x + spawnAreaSize.x / 2),
+        Random.Range(spawnAreaCenter.y - spawnAreaSize.y / 2, spawnAreaCenter.y + spawnAreaSize.y / 2),
+        Random.Range(spawnAreaCenter.z - spawnAreaSize.z / 2, spawnAreaCenter.z + spawnAreaSize.z / 2) 
+        );
 
-            Instantiate(objectToSpawn, randomPosition, Quaternion.identity);
+        if(night){
+            if (maxEnemy <= 0 || GameObject.FindGameObjectsWithTag("SpawnedEnemy").Length < maxEnemy){}
+                var enemy = Instantiate(skeleton, randomPosition, Quaternion.identity);
+                spawnedEnemies.Add(enemy);
+            }
+        else if (maxPassive <= 0 || GameObject.FindGameObjectsWithTag("SpawnedPassive").Length < maxPassive){
+                if(Random.Range(0,2) == 1){
+                    Instantiate(goat, randomPosition, Quaternion.identity);
+                }
+                else{
+                    Instantiate(sheep, randomPosition, Quaternion.identity);
+                }
+            }   
         }
-    }
 }
