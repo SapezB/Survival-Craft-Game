@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private GameObject swordOnShoulder;
     public bool isEquipping;
     public bool isEquipped;
+ 
 
 
     //Blocking Parameters
