@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  drop: {fileID: 9219458726982319854, guid: e83fe8155fc1ac542afbfd36dee79bf2, type: 3}
 --- !u!64 &-7103907532290617788
 MeshCollider:
   m_ObjectHideFlags: 0

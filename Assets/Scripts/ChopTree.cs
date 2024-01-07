@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class ChopTree : MonoBehaviour
 {
-    public float health = 3;
+    public static float maxHealth = 3;
+    public GameObject drop;
+    public GameObject appleDrop;
+    private float health = maxHealth;
+    
+
   
     private void Die()
     {
        Destroy(this.gameObject);
+       for (int i = 0; i < maxHealth; i++)
+       {
+        Instantiate(drop, transform.position, Quaternion.identity);
+       }
+       if(Random.Range(0,2) == 1){
+        Instantiate(appleDrop, transform.position, Quaternion.identity);
+       }
         
     }
 

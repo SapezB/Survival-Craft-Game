@@ -34,15 +34,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 26c9a24e2bcc5b14a86157d919bf299f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 506.06995
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 26c9a24e2bcc5b14a86157d919bf299f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 26c9a24e2bcc5b14a86157d919bf299f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 387.18533
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 26c9a24e2bcc5b14a86157d919bf299f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -108,7 +108,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.040316995
-  m_Center: {x: 0.0000000027939682, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &562786439133677347
 MonoBehaviour:
   m_ObjectHideFlags: 0

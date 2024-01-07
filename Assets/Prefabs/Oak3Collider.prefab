@@ -122,4 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9cdde36b37c68d4897cfe98e59782ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  drop: {fileID: 1835994043575309907, guid: 1cd3cae71f8adf349b58ce2b2e001404, type: 3}
+  appleDrop: {fileID: 388876489497171537, guid: d0ddd93953187fd4195f9cea4a7b8a56, type: 3}

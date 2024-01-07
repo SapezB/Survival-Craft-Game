@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6178696665733464343}
   - component: {fileID: 1915937043919985427}
   - component: {fileID: 6668828247758103347}
-  - component: {fileID: 7547633877323313352}
   m_Layer: 7
   m_Name: PineTree
   m_TagString: Tree
@@ -122,17 +121,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9cdde36b37c68d4897cfe98e59782ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
---- !u!114 &7547633877323313352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3582753900788602751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9cdde36b37c68d4897cfe98e59782ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
+  drop: {fileID: 1835994043575309907, guid: 1cd3cae71f8adf349b58ce2b2e001404, type: 3}
+  appleDrop: {fileID: 388876489497171537, guid: d0ddd93953187fd4195f9cea4a7b8a56, type: 3}
