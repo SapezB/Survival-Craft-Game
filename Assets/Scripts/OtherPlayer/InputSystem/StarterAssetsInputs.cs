@@ -17,7 +17,7 @@ namespace StarterAssets
 		public bool analogMovement;
 
 		[Header("Mouse Cursor Settings")]
-		//public bool cursorLocked = true;
+		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
 		private PlayerController playerController;
@@ -76,15 +76,16 @@ namespace StarterAssets
 			sprint = newSprintState;
 		}
 
-		//private void OnApplicationFocus(bool hasFocus)
-		//{
-			//SetCursorState(cursorLocked);
-		//}
+		private void OnApplicationFocus(bool hasFocus)
+		{
+			setcursorstate(cursorLocked);
+		}
 
-		//private void SetCursorState(bool newState)
-		//{
-			//Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
-		//}
-	}
-	
+        private void setcursorstate(bool newState)
+        {
+            Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+        }
+
+    }
+
 }

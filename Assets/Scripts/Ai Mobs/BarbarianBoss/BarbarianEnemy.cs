@@ -9,7 +9,6 @@ public class BarbarianEnemy : MonoBehaviour
     [SerializeField] float maxHealth = 3;
     [SerializeField] private HealthBar _healthBar;
     [SerializeField] GameObject hitVFX;
-    
 
     [Header("Combat")]
     [SerializeField] float attackCD = 3f;
@@ -28,11 +27,13 @@ public class BarbarianEnemy : MonoBehaviour
     private float health;
     private bool buffApplied = false;
     private bool stunApplied = false;
+    private bool isStunnedOrBuffed = false; // New variable to check if stunned or buffed
+    [SerializeField] private float resumeDelay = 2f; // Delay after which boss resumes behavior
 
     void Start()
     {
         health = maxHealth;
-        _healthBar.UpdateHealthBar(maxHealth,health);
+        _healthBar.UpdateHealthBar(maxHealth, health);
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -43,7 +44,7 @@ public class BarbarianEnemy : MonoBehaviour
     {
         animator.SetFloat("speed", agent.velocity.magnitude / agent.speed);
 
-        if (player == null || hasDied)
+        if (player == null || hasDied || isStunnedOrBuffed)
         {
             return;
         }
@@ -52,29 +53,16 @@ public class BarbarianEnemy : MonoBehaviour
 
         if (distanceToPlayer <= attackRange)
         {
-            // Smoothly rotate towards the player when in attack range
             LookAtPlayer();
 
             if (timePassed >= attackCD)
             {
-                if (axeAttackCount >= 2)
-                {
-                    transform.LookAt(transform.position);
-                    animator.SetTrigger("shieldattack"); // Trigger shield attack animation
-                    axeAttackCount = 0; // Reset the axe attack counter
-                }
-                else
-                {
-                    animator.SetTrigger("attack"); // Regular axe attack
-                    axeAttackCount++; // Increment axe attack counter
-                }
-                timePassed = 0;
+                AttackPlayer();
             }
         }
         else if (distanceToPlayer <= aggroRange)
         {
-            // Optionally, handle behavior when player is within aggro range but outside attack range
-            // For example, moving towards the player or some other action
+            agent.SetDestination(player.transform.position);
         }
 
         timePassed += Time.deltaTime;
@@ -87,21 +75,36 @@ public class BarbarianEnemy : MonoBehaviour
         newDestinationCD -= Time.deltaTime;
     }
 
+    private void AttackPlayer()
+    {
+        if (axeAttackCount >= 2)
+        {
+            animator.SetTrigger("shieldattack");
+            axeAttackCount = 0;
+        }
+        else
+        {
+            animator.SetTrigger("attack");
+            axeAttackCount++;
+        }
+        timePassed = 0;
+    }
+
     private void LookAtPlayer()
     {
         Vector3 direction = (player.transform.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed); // Smooth rotation
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
     }
 
     private void Die()
     {
         if (hasDied) return;
-        animator.SetTrigger("death"); // Trigger death animation using a trigger
-        agent.isStopped = true; // Stop the NavMeshAgent
+        animator.SetTrigger("death");
+        agent.isStopped = true;
         hasDied = true;
         GetComponent<LootBag>().InstantitateLoot(transform.position);
-        StartCoroutine(DestroyAfterDelay(3.5f)); // Adjust the time to match the length of the death animation
+        StartCoroutine(DestroyAfterDelay(3.5f));
     }
 
     private IEnumerator DestroyAfterDelay(float delay)
@@ -118,26 +121,27 @@ public class BarbarianEnemy : MonoBehaviour
         _healthBar.UpdateHealthBar(maxHealth, health);
         hitCounter++;
 
-        // Hit animation every third hit
         if (hitCounter % 3 == 0)
         {
-            animator.SetTrigger("hit");
+            animator.SetTrigger("damage");
         }
 
-        // Stunned animation at half health
         if (health <= maxHealth / 2 && !stunApplied)
         {
+            isStunnedOrBuffed = true;
             animator.SetTrigger("stuned");
+            StartCoroutine(ResumeAfterDelay(resumeDelay));
             stunApplied = true;
         }
 
-        // Buff animation and heal at 20% health
         if (health <= maxHealth * 0.2 && !buffApplied)
         {
+            isStunnedOrBuffed = true;
             animator.SetTrigger("buff");
-            health += maxHealth * 0.2f; // Heal for 20% of max health
-            attackCD *= 0.8f; // Decrease attack cooldown by 20%
-            buffApplied = true; // Ensure buff is only applied once
+            health += maxHealth * 0.2f;
+            attackCD *= 0.8f;
+            buffApplied = true;
+            StartCoroutine(ResumeAfterDelay(resumeDelay));
             _healthBar.UpdateHealthBar(maxHealth, health);
         }
 
@@ -147,11 +151,18 @@ public class BarbarianEnemy : MonoBehaviour
         }
     }
 
+    private IEnumerator ResumeAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        isStunnedOrBuffed = false;
+    }
+
     public void StartDealDamage()
     {
         GetComponentInChildren<EnemyDamageDealer>().StartDealDamage();
         GetComponentInChildren<ShieldDamageDealer>().StartDealDamage();
     }
+
     public void EndDealDamage()
     {
         GetComponentInChildren<EnemyDamageDealer>().EndDealDamage();
