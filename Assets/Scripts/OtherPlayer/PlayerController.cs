@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Third Person Controller References
+    // Third Person Controller References
     [SerializeField]
     private Animator playerAnim;
 
-
-    //Equip-Unequip parameters
+    // Equip-Unequip parameters
     [SerializeField]
     private GameObject sword;
     [SerializeField]
@@ -21,28 +20,22 @@ public class PlayerController : MonoBehaviour
     public bool isPotioning;
     public bool isPotioned;
 
-
-    //Blocking Parameters
+    // Blocking Parameters
     public bool isBlocking;
 
-    //Kick Parameters
+    // Kick Parameters
     public bool isKicking;
 
-    //Attack Parameters
+    // Attack Parameters
     public bool isAttacking;
     private float timeSinceAttack;
     public int currentAttack = 0;
-
-
-
 
     private void Update()
     {
         timeSinceAttack += Time.deltaTime;
 
         Attack();
-
-
         Equip();
         EquipPotion();
         Block();
@@ -79,39 +72,25 @@ public class PlayerController : MonoBehaviour
     public void Equipped()
     {
         isEquipping = false;
-
     }
 
     private void EquipPotion()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            isPotioning = true;
-
+            isPotioning = !isPotioning; // Toggle potioning state
+            ActivePotion(); // Call ActivePotion method to handle the potion's active state
         }
     }
 
     public void ActivePotion()
     {
-        if (!isPotioned)
-        {
-            Potion.SetActive(false);
-            isPotioned = !isPotioned;
-
-        }
-        else
-        {
-
-            Potion.SetActive(true);
-            isPotioned = !isPotioned;
-
-        }
+        Potion.SetActive(isPotioning); // Set potion active state based on isPotioning
     }
 
     public void Potioned()
     {
         isPotioning = false;
-
     }
 
     private void Block()
@@ -144,7 +123,6 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-
         if (Input.GetMouseButtonDown(0) && playerAnim.GetBool("Grounded") && timeSinceAttack > 0.8f)
         {
             if (!isEquipped)
@@ -156,24 +134,19 @@ public class PlayerController : MonoBehaviour
             if (currentAttack > 3)
                 currentAttack = 1;
 
-            //Reset
+            // Reset
             if (timeSinceAttack > 1.0f)
                 currentAttack = 1;
 
-            //Call Attack Triggers
+            // Call Attack Triggers
             playerAnim.SetTrigger("Attack" + currentAttack);
 
-            //Reset Timer
+            // Reset Timer
             timeSinceAttack = 0;
         }
-
-
-
-
-
     }
 
-    //This will be used at animation event
+    // This will be used at animation event
     public void ResetAttack()
     {
         isAttacking = false;
