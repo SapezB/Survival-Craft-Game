@@ -6,12 +6,12 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject skeleton;
     public GameObject sheep;
-    public GameObject goat;
+    // public GameObject goat;
     public LightManager daytime;
     public Vector3 spawnAreaCenter;  
     public Vector3 spawnAreaSize;    
-    public int maxEnemy = 10 ;   
-    public int maxPassive = 30 ; 
+    public int maxEnemy = 20 ;   
+    public int maxPassive = 100 ; 
     public float spawnInterval = 5f;
     public bool spawnOnStart = true; // Whether to start spawning objects immediately
     private int currDay = 0;
@@ -68,12 +68,14 @@ public class SpawnManager : MonoBehaviour
                 spawnedEnemies.Add(enemy);
             }
         else if (maxPassive <= 0 || GameObject.FindGameObjectsWithTag("SpawnedPassive").Length < maxPassive){
-                if(Random.Range(0,2) == 1){
-                    Instantiate(goat, randomPosition, Quaternion.identity);
-                }
-                else{
-                    Instantiate(sheep, randomPosition, Quaternion.identity);
-                }
-            }   
+            //     if(Random.Range(0,2) == 1){
+            //         Instantiate(goat, randomPosition, Quaternion.identity);
+            //     }
+            //     else{
+            //         Instantiate(sheep, randomPosition, Quaternion.identity);
+            //     }
+            // }   
+            Instantiate(sheep, randomPosition, Quaternion.identity);
         }
+}
 }
