@@ -7,7 +7,8 @@ using UnityEngine.InputSystem.Processors;
 
 public class PassiveEnemy : MonoBehaviour
 {
-    [SerializeField] private float health = 3;
+    [SerializeField] private float maxHealth = 3;
+    [SerializeField] private HealthBar _healthBar;
     [SerializeField] private GameObject hitVFX;
     [SerializeField] private float roamingRadius = 10f;
     [SerializeField] private float roamingInterval = 5f;
@@ -16,9 +17,12 @@ public class PassiveEnemy : MonoBehaviour
     private NavMeshAgent agent;
     private Animator animator;
     private float timeToNextRoaming = 0f;
+    private float health;
 
     void Start()
     {
+        health = maxHealth;
+        _healthBar.UpdateHealthBar(maxHealth, health);
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         timeToNextRoaming = roamingInterval;
@@ -54,6 +58,7 @@ public class PassiveEnemy : MonoBehaviour
         if (hasDied) return; // No further action if already dead
 
         health -= damageAmount;
+        _healthBar.UpdateHealthBar(maxHealth, health);
 
         if (health <= 0)
         {

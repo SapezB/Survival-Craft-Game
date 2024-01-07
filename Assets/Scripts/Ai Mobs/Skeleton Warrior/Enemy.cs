@@ -6,7 +6,8 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] float health = 3;
+    [SerializeField] float maxHealth = 3;
+    [SerializeField] private HealthBar _healthBar;
     [SerializeField] GameObject hitVFX;
     [SerializeField] GameObject ragdoll;
    
@@ -21,9 +22,12 @@ public class Enemy : MonoBehaviour
     Animator animator;
     float timePassed;
     float newDestinationCD = 0.5f;
+    private float health;
 
     void Start()
     {
+        health = maxHealth;
+        _healthBar.UpdateHealthBar(maxHealth, health);
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -70,6 +74,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         health -= damageAmount;
+        _healthBar.UpdateHealthBar(maxHealth, health);
         animator.SetTrigger("damage");
        
 

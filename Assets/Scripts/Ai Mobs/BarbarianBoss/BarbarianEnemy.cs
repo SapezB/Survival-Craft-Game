@@ -7,6 +7,7 @@ using UnityEngine.AI;
 public class BarbarianEnemy : MonoBehaviour
 {
     [SerializeField] float maxHealth = 3;
+    [SerializeField] private HealthBar _healthBar;
     [SerializeField] GameObject hitVFX;
     
 
@@ -15,7 +16,6 @@ public class BarbarianEnemy : MonoBehaviour
     [SerializeField] float attackRange = 1f;
     [SerializeField] float aggroRange = 4f;
     [SerializeField] private float rotationSpeed = 5f;
-
 
     GameObject player;
     NavMeshAgent agent;
@@ -32,6 +32,7 @@ public class BarbarianEnemy : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        _healthBar.UpdateHealthBar(maxHealth,health);
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -114,6 +115,7 @@ public class BarbarianEnemy : MonoBehaviour
         if (hasDied) return;
 
         health -= damageAmount;
+        _healthBar.UpdateHealthBar(maxHealth, health);
         hitCounter++;
 
         // Hit animation every third hit
@@ -136,6 +138,7 @@ public class BarbarianEnemy : MonoBehaviour
             health += maxHealth * 0.2f; // Heal for 20% of max health
             attackCD *= 0.8f; // Decrease attack cooldown by 20%
             buffApplied = true; // Ensure buff is only applied once
+            _healthBar.UpdateHealthBar(maxHealth, health);
         }
 
         if (health <= 0)

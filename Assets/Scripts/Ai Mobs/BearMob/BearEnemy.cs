@@ -6,14 +6,17 @@ using UnityEngine.AI;
 
 public class BearEnemy : MonoBehaviour
 {
-    [SerializeField] private float health = 3;
+    [SerializeField] private float maxHealth = 3;
+    [SerializeField] private HealthBar _healthBar;
     [SerializeField] private GameObject hitVFX;
     [SerializeField] LootBag lootBag;
+
     [Header("Combat")]
     [SerializeField] private float attackCD = 3f;
     [SerializeField] private float attackRange = 1f;
     [SerializeField] private float aggroRange = 4f;
 
+    private float health;
     private bool hasDied = false;
     private GameObject player;
     private NavMeshAgent agent;
@@ -24,6 +27,8 @@ public class BearEnemy : MonoBehaviour
 
     void Start()
     {
+        health = maxHealth;
+        _healthBar.UpdateHealthBar(maxHealth, health);
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -123,6 +128,7 @@ public class BearEnemy : MonoBehaviour
     {
         if (hasDied) return;
         health -= damageAmount;
+        _healthBar.UpdateHealthBar(maxHealth, health);
         animator.SetTrigger("damage");
 
 
