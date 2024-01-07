@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3212953384480080058}
   - component: {fileID: 6151936449387639461}
   - component: {fileID: 7522445803273703294}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Oak3DryCollider
   m_TagString: Tree
   m_Icon: {fileID: 0}
