@@ -23,10 +23,10 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        var invetory = other.transform.GetComponent<Holder>();
+        var invetory = other.transform.GetComponent<PlayerHolder>();
 
         if (!invetory) return;
-        if (invetory.InvetorySystem.AddToInvetory(ItemData, 1))
+        if (invetory.AddToInventory(ItemData, 1))
         {
             Destroy(this.gameObject);
         }
