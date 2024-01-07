@@ -60,18 +60,21 @@ public class PlayerController : MonoBehaviour
             sword.SetActive(true);
             swordOnShoulder.SetActive(false);
             isEquipped = !isEquipped;
+            playerAnim.SetBool("isCombat", true);
         }
         else
         {
             sword.SetActive(false);
             swordOnShoulder.SetActive(true);
             isEquipped = !isEquipped;
+            playerAnim.SetBool("isCombat", false);
         }
     }
 
     public void Equipped()
     {
         isEquipping = false;
+
     }
 
     private void Block()
