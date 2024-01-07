@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b570e5b71875a3418969dabe2b7ee4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 3
+  maxHealth: 3
+  _healthBar: {fileID: 0}
   hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
   ragdoll: {fileID: 463838689969216443, guid: dfa1599583c761c408afc52041b6c509, type: 3}
   attackCD: 2
@@ -4876,6 +4877,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1174444531894583882}
     m_Modifications:
+    - target: {fileID: 306259506863312608, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 306259506863312608, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.221
+      objectReference: {fileID: 0}
+    - target: {fileID: 306259506863312608, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
+      objectReference: {fileID: 0}
     - target: {fileID: 4489677676252728369, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
       propertyPath: m_Name
       value: PT_Sword_01_a
@@ -4927,6 +4940,10 @@ PrefabInstance:
     - target: {fileID: 5508085357228069910, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
       propertyPath: weaponDamage
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5508085357228069910, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
+      propertyPath: weaponLength
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
