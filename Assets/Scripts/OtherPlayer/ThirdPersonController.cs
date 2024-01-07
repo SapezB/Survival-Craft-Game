@@ -2,12 +2,13 @@
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
+using UnityEngine.Audio;
 
 /* Note: animations are called via the controller for both the character and capsule using animator null checks
  */
 
 namespace StarterAssets
-{
+{  
     [RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM 
     [RequireComponent(typeof(PlayerInput))]
@@ -121,7 +122,9 @@ namespace StarterAssets
 #endif
             }
         }
-
+        public AudioMixerGroup SFXMixerGroup;
+        private AudioSource _audioSource;
+        
 
         //PlayerControllerParameters
         private PlayerController playerController;
@@ -156,6 +159,9 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            _audioSource = gameObject.AddComponent<AudioSource>();
+            _audioSource.outputAudioMixerGroup = SFXMixerGroup;
         }
 
         private void Update()
@@ -196,13 +202,15 @@ namespace StarterAssets
             }
         }
 
+        public float mouseSensitivity = 1.0f;
         private void CameraRotation()
         {
             // if there is an input and camera position is not fixed
+            // if there is an input and camera position is not fixed
             if (_input.look.sqrMagnitude >= _threshold && !LockCameraPosition)
             {
-                //Don't multiply mouse input by Time.deltaTime;
-                float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
+                // Apply mouse sensitivity multiplier
+                float deltaTimeMultiplier = IsCurrentDeviceMouse ? mouseSensitivity : Time.deltaTime * mouseSensitivity;
 
                 _cinemachineTargetYaw += _input.look.x * deltaTimeMultiplier;
                 _cinemachineTargetPitch += _input.look.y * deltaTimeMultiplier;
@@ -388,7 +396,7 @@ namespace StarterAssets
                 if (FootstepAudioClips.Length > 0)
                 {
                     var index = Random.Range(0, FootstepAudioClips.Length);
-                    AudioSource.PlayClipAtPoint(FootstepAudioClips[index], transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                    _audioSource.PlayOneShot(FootstepAudioClips[index], FootstepAudioVolume);
                 }
             }
         }
@@ -397,7 +405,7 @@ namespace StarterAssets
         {
             if (animationEvent.animatorClipInfo.weight > 0.5f)
             {
-                AudioSource.PlayClipAtPoint(LandingAudioClip, transform.TransformPoint(_controller.center), FootstepAudioVolume);
+                _audioSource.PlayOneShot(LandingAudioClip, FootstepAudioVolume);
             }
         }
     }
