@@ -8,5 +8,7 @@ public class ItemData : ScriptableObject
     public Sprite Icon;
     public int MaxStackSize;
     public string Type;
-    
+    public GameObject prefab;
+
+    public int equippableItemIndex = 1;
 }

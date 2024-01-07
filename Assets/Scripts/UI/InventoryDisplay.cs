@@ -12,7 +12,7 @@ public abstract class InventoryDisplay : MonoBehaviour
     protected Dictionary<UISlot, Slot> Slots;
     public InventorySystem InventorySystem => inventorySystem;
     public Dictionary<UISlot, Slot> SlotDictionary => Slots;
-
+    
     protected virtual void Start()
     {
 
@@ -32,11 +32,12 @@ public abstract class InventoryDisplay : MonoBehaviour
     }
 
     public void SlotClicked(UISlot clickedSlot){
-        bool isControlPressed = Keyboard.current.leftCtrlKey.isPressed;
+        bool isZPressed = Keyboard.current.zKey.isPressed;
         if (clickedSlot.AssignedSlot.ItemData != null && mouseInvetoryItem.InvetorySlot.ItemData == null) 
         {
+            
 
-            if (isControlPressed && clickedSlot.AssignedSlot.SplitStack(out Slot halfStack))
+            if (isZPressed && clickedSlot.AssignedSlot.SplitStack(out Slot halfStack))
             {
                 mouseInvetoryItem.UpdateMouseSlot(halfStack);
                 clickedSlot.UpdateUISlot();
@@ -49,6 +50,8 @@ public abstract class InventoryDisplay : MonoBehaviour
                 clickedSlot.ClearSlot();
                 return;
             }
+
+            
            
         }
 
@@ -109,4 +112,6 @@ public abstract class InventoryDisplay : MonoBehaviour
         clickedSlot.AssignedSlot.AssignItem(clonedSlot);
         clickedSlot.UpdateUISlot();
     }
+
+    
 }

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -11,7 +13,7 @@ public class PlayerHolder : EquipmentHolder
 
     [SerializeField] protected InventorySystem thirdInvetroySystem;
 
-
+    public List<GameObject> equippableItems = new List<GameObject>();
 
     public InventorySystem ThirdInvetroySystem => thirdInvetroySystem;
 
@@ -36,6 +38,9 @@ public class PlayerHolder : EquipmentHolder
             OnPlayerEquipmentDisplayRequested?.Invoke(secondaryInvetroySystem);
             OnPlayerBackpackDisplayRequested?.Invoke(thirdInvetroySystem);
         }
+
+       
+       
     }
 
 
@@ -48,4 +53,6 @@ public class PlayerHolder : EquipmentHolder
 
         return false;
     }
+
+    
 }

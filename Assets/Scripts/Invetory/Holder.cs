@@ -13,6 +13,8 @@ public class Holder : MonoBehaviour
 
     public static UnityAction<InventorySystem> OnDynamicInvetoryDisplayRequested;
 
+    public static UnityAction<InventorySystem> OnPlayerInvetoryChanged;
+
 
     protected virtual void Awake()
     {

@@ -13,9 +13,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject sword;
     [SerializeField]
+    private GameObject Potion;
+    [SerializeField]
     private GameObject swordOnShoulder;
     public bool isEquipping;
     public bool isEquipped;
+    public bool isPotioning;
+    public bool isPotioned;
 
 
     //Blocking Parameters
@@ -40,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
 
         Equip();
+        EquipPotion();
         Block();
         Kick();
     }
@@ -74,6 +79,38 @@ public class PlayerController : MonoBehaviour
     public void Equipped()
     {
         isEquipping = false;
+
+    }
+
+    private void EquipPotion()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            isPotioning = true;
+
+        }
+    }
+
+    public void ActivePotion()
+    {
+        if (!isPotioned)
+        {
+            Potion.SetActive(false);
+            isPotioned = !isPotioned;
+
+        }
+        else
+        {
+
+            Potion.SetActive(true);
+            isPotioned = !isPotioned;
+
+        }
+    }
+
+    public void Potioned()
+    {
+        isPotioning = false;
 
     }
 
@@ -140,5 +177,5 @@ public class PlayerController : MonoBehaviour
     public void ResetAttack()
     {
         isAttacking = false;
-    } 
-}   
+    }
+}
