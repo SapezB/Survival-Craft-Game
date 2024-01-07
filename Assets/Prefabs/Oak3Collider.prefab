@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1375732070974129496}
   - component: {fileID: 2020269414244500110}
   - component: {fileID: 4409396153800309963}
+  - component: {fileID: -3390855907161733629}
   m_Layer: 0
   m_Name: Oak3Collider
   m_TagString: Tree
@@ -109,3 +110,16 @@ CapsuleCollider:
   m_Height: 37.742306
   m_Direction: 1
   m_Center: {x: 0.53, y: 15.845064, z: -1.16}
+--- !u!114 &-3390855907161733629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5406077631562243241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cdde36b37c68d4897cfe98e59782ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3

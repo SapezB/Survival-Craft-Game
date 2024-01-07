@@ -9,7 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1153286744658032127}
-  m_Layer: 0
+  - component: {fileID: -4401749364915700086}
+  - component: {fileID: -7103907532290617788}
+  - component: {fileID: 1525716953297605241}
+  m_Layer: 7
   m_Name: DiamondMineral
   m_TagString: Mineral
   m_Icon: {fileID: 0}
@@ -37,6 +40,64 @@ Transform:
   - {fileID: 6594497879350296489}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4401749364915700086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404342801463215682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 518fc7ba82dc5a941872b66b9ea23215, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+--- !u!64 &-7103907532290617788
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404342801463215682}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!136 &1525716953297605241
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8404342801463215682}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.16
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0.22, y: -1.03, z: -0.32}
 --- !u!1001 &6158742694640823756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48,6 +109,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: aaaeebe90a6afb84588105bfe8b485c6, type: 3}
       propertyPath: m_Name
       value: BlueCrystal09 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: aaaeebe90a6afb84588105bfe8b485c6, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: aaaeebe90a6afb84588105bfe8b485c6, type: 3}
       propertyPath: m_RootOrder
@@ -123,6 +188,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1153286744658032127}
     m_Modifications:
+    - target: {fileID: 100000, guid: 3c444d96b9ca70947b5ca926e40d1885, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3c444d96b9ca70947b5ca926e40d1885, type: 3}
       propertyPath: m_RootOrder
       value: 38
@@ -173,6 +242,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1153286744658032127}
     m_Modifications:
+    - target: {fileID: 100000, guid: 26c9a24e2bcc5b14a86157d919bf299f, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 26c9a24e2bcc5b14a86157d919bf299f, type: 3}
       propertyPath: m_RootOrder
       value: 29
@@ -251,6 +324,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueCrystal03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bca750044050e1144ba752d3ee6cfd05, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bca750044050e1144ba752d3ee6cfd05, type: 3}
       propertyPath: m_RootOrder
       value: 27
@@ -316,6 +393,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e9433e43935478f4a939f7e4137e9b2e, type: 3}
       propertyPath: m_Name
       value: BlueCrystal06 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e9433e43935478f4a939f7e4137e9b2e, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e9433e43935478f4a939f7e4137e9b2e, type: 3}
       propertyPath: m_RootOrder
@@ -394,6 +475,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 53c99f530c589ab43a9650c399ee61b0, type: 3}
       propertyPath: m_Name
       value: BlueCrystal00 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 53c99f530c589ab43a9650c399ee61b0, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 53c99f530c589ab43a9650c399ee61b0, type: 3}
       propertyPath: m_RootOrder

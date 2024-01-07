@@ -48,6 +48,14 @@ public class DamageDealerScript : MonoBehaviour
                         barbarianEnemy.TakeDamage(weaponDamage);
                         hasDealtDamage.Add(hit.transform.gameObject);
                     }
+                    else if (hit.transform.TryGetComponent(out ChopTree tree))
+                    {
+                        tree.TakeDamage(weaponDamage);
+                    }
+                    else if (hit.transform.TryGetComponent(out MineMineral mineral))
+                    {
+                        mineral.TakeDamage(weaponDamage);
+                    }
                 }
             }
         }
