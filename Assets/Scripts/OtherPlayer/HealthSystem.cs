@@ -16,6 +16,11 @@ public class HealthSystem : MonoBehaviour
     public float health;
     Animator animator;
 
+    // XP System
+    public int xp = 0; // Player's current XP
+    public int xpForNextLevel = 1; // XP needed for next level
+    public DamageDealerScript damageDealer;
+
     void Start()
     {
         health = maxHealth;
@@ -25,6 +30,25 @@ public class HealthSystem : MonoBehaviour
         animator = GetComponent<Animator>();
         hunger = maxHunger; // Initialize hunger to full
         StartCoroutine(HungerRoutine());
+        damageDealer = GetComponentInChildren<DamageDealerScript>();
+    }
+
+    public void GainXP(int amount)
+    {
+        xp += amount;
+        if (xp >= xpForNextLevel)
+        {
+            LevelUp();
+        }
+    }
+
+    private void LevelUp()
+    {
+        xp -= xpForNextLevel;
+        xpForNextLevel++; // Increase the XP required for next level
+
+        maxHealth += 10; // Increase max health
+        damageDealer.IncreaseWeaponDamage(1); // Increase weapon damage
     }
 
     IEnumerator HungerRoutine()

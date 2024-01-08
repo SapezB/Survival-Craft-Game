@@ -67,7 +67,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Instantiate(ragdoll, transform.position, transform.rotation);
-        
+        player.GetComponent<HealthSystem>().GainXP(1);
         Destroy(this.gameObject);
     }
 
@@ -76,7 +76,6 @@ public class Enemy : MonoBehaviour
         health -= damageAmount;
         _healthBar.UpdateHealthBar(maxHealth, health);
         animator.SetTrigger("damage");
-       
 
         if (health <= 0)
         {
