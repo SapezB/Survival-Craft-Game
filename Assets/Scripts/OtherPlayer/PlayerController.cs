@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
         EquipPotion();
         Block();
         Kick();
-        EquipAll(leftHandHolder);
         if (equipmentSystem.SecondaryInvetroySystem.slots.Count != 0)
         {
             if (equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData != null)
@@ -72,11 +71,7 @@ public class PlayerController : MonoBehaviour
        
 
 
-     
-
-
-
-
+    
     }
 
 
@@ -91,7 +86,6 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData.UseItem();
-            equipmentSystem.DisableSlot(0);
 
             equipmentSystem.SecondaryInvetroySystem.slots[0].ClearSlot();
             equipmentSystem.SecondaryInvetroySystem.onInvetorySlotChanged?.Invoke(equipmentSystem.SecondaryInvetroySystem.slots[0]);
@@ -118,13 +112,11 @@ public class PlayerController : MonoBehaviour
         {
             isEquipped = !isEquipped;
             playerAnim.SetBool("isCombat", true);
-            equipmentSystem.DisableSlot(0);
             sword.SetActive(true);
             swordOnShoulder.SetActive(false);
         }
         else
         {
-            equipmentSystem.DisableSlot(0);
             isEquipped = !isEquipped;
             playerAnim.SetBool("isCombat", false);
             sword.SetActive(false);

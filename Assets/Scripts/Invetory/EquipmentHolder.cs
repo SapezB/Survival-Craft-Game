@@ -15,6 +15,8 @@ public class EquipmentHolder : Holder
 
     private List<GameObject> equippedItems = new List<GameObject>();
     public InventorySystem SecondaryInvetroySystem => secondaryInvetroySystem;
+    public List<GameObject> EquippedItems => equippedItems;
+
 
     public static UnityAction<InventorySystem> OnPlayerEquipmentDisplayRequested;
     protected override void Awake()
@@ -25,65 +27,34 @@ public class EquipmentHolder : Holder
     }
     void Update()
     {
-        
+
     }
 
 
-    public void EnableEquipment(GameObject parent )
+    public void EnableEquipment(GameObject parent)
     {
-        if (secondaryInventroySize == 0 && equippedItems.Count != 0)
+        if (secondaryInvetroySystem.slots[0].ItemData!= null)
         {
-            return;
-        }
-        for (int i = 0; i < secondaryInvetroySystem.slots.Count; i++)
-        {
-            if (secondaryInvetroySystem.slots[i].ItemData != null)
+            if (secondaryInvetroySystem.slots[0].ItemData.equippableItemIndex == 10 && secondaryInvetroySystem.slots[0].ItemData.equipped == false)
             {
+              
+                GameObject item = Instantiate(equippableItems[0], parent.transform);
+                secondaryInvetroySystem.slots[0].ItemData.equipped = true;
 
-                if (secondaryInvetroySystem.slots[i].ItemData.equippableItemIndex == 0 && secondaryInvetroySystem.slots[i].ItemData.equipped == false)
-                {
-                    secondaryInvetroySystem.slots[i].ItemData.equipped = true;
-                    GameObject item = Instantiate(equippableItems[0],parent.transform);
-
-                    equippedItems.Add(item);    
-                  
-
-        
-                }
-
-                
+                equippedItems.Add(item);
             }
 
         }
+
+
+
+
+
+
+
+
     }
-
-    public void DisableEquipment(  )
-    {
-      
-        
-        if (secondaryInvetroySystem.slots[0] == null && equippedItems.Count == 0)
-        {
-            return;
-        }
-        else if (secondaryInvetroySystem.slots[0] == null && equippedItems.Count!=0)
-        {
-            Destroy(equippedItems[0]);
-            return;
-        }
-        else if (secondaryInvetroySystem.slots[0] != null && equippedItems.Count != 0)
-        {
-            
-        }
-       
-       
-    }
-
-    public void DisableSlot(int index)
-    {
-
-        Destroy(equippedItems[index]);
-       
-    }
+    
 
 
-}
+ }
