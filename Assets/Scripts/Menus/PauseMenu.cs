@@ -1,3 +1,4 @@
+using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -8,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
-
+    public ThirdPersonController thirdPersonController;
     public GameObject pauseMenuUI;
     void Start()
     {
@@ -38,7 +39,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-
+        thirdPersonController.mouseSensitivity = thirdPersonController.mouseSensitivity + 0.01f;
         
     }
     void Pause()
