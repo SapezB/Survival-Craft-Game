@@ -8,6 +8,7 @@ public class UIController : MonoBehaviour
     public DynamicInvetoryDisplay chestPanel;
     public DynamicInvetoryDisplay playerBackpackPanel;
     public DynamicInvetoryDisplay playerEquipmentPanel;
+
     private void Awake()
     {
         chestPanel.gameObject.SetActive(false);
@@ -19,6 +20,7 @@ public class UIController : MonoBehaviour
         Holder.OnDynamicInvetoryDisplayRequested += DisplayInventory;
         PlayerHolder.OnPlayerBackpackDisplayRequested += DisplayPlayerBackpack;
         EquipmentHolder.OnPlayerEquipmentDisplayRequested += DisplayPlayerEquipment;
+    
     }
 
     private void OnDisable()
@@ -26,6 +28,7 @@ public class UIController : MonoBehaviour
         Holder.OnDynamicInvetoryDisplayRequested -= DisplayInventory;
         PlayerHolder.OnPlayerBackpackDisplayRequested -= DisplayPlayerBackpack;
         EquipmentHolder.OnPlayerEquipmentDisplayRequested -= DisplayPlayerEquipment;
+    
     }
 
 
@@ -36,6 +39,7 @@ public class UIController : MonoBehaviour
         if (chestPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) chestPanel.gameObject.SetActive(false);
         if (playerBackpackPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) playerBackpackPanel.gameObject.SetActive(false);
         if (playerEquipmentPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) playerEquipmentPanel.gameObject.SetActive(false);
+        
     }
 
 
@@ -56,5 +60,7 @@ public class UIController : MonoBehaviour
         playerEquipmentPanel.gameObject.SetActive(true);
         playerEquipmentPanel.RefreshDynamicInventory(invToDisplay);
     }
+
+    
 }
 

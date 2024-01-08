@@ -7,7 +7,7 @@ using UnityEngine;
 public class Loot : ItemData
 {
     public int dropChance;
-    public GameObject prefab;
+    
 
 
     public Loot( int dropChnce)
