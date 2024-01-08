@@ -8,17 +8,20 @@ public class UIController : MonoBehaviour
     public DynamicInvetoryDisplay chestPanel;
     public DynamicInvetoryDisplay playerBackpackPanel;
     public DynamicInvetoryDisplay playerEquipmentPanel;
+    public DynamicInvetoryDisplay playerCraftingPanel;
     private void Awake()
     {
         chestPanel.gameObject.SetActive(false);
         playerBackpackPanel.gameObject.SetActive(false);
         playerEquipmentPanel.gameObject.SetActive(false);
+        playerCraftingPanel.gameObject.SetActive(false);
     }
     private void OnEnable()
     {
         Holder.OnDynamicInvetoryDisplayRequested += DisplayInventory;
         PlayerHolder.OnPlayerBackpackDisplayRequested += DisplayPlayerBackpack;
         EquipmentHolder.OnPlayerEquipmentDisplayRequested += DisplayPlayerEquipment;
+        CraftingHolder.OnPlayerEquipmentDisplayRequested += DisplayPlayerCrafting;
     }
 
     private void OnDisable()
@@ -55,6 +58,12 @@ public class UIController : MonoBehaviour
     {
         playerEquipmentPanel.gameObject.SetActive(true);
         playerEquipmentPanel.RefreshDynamicInventory(invToDisplay);
+    }
+
+    void DisplayPlayerCrafting(InventorySystem invToDisplay)
+    {
+        playerCraftingPanel.gameObject.SetActive(true);
+        playerCraftingPanel.RefreshDynamicInventory(invToDisplay);
     }
 }
 

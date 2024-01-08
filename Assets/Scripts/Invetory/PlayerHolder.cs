@@ -38,10 +38,16 @@ public class PlayerHolder : EquipmentHolder
             OnPlayerBackpackDisplayRequested?.Invoke(thirdInvetroySystem);
         }
 
-      
-  
-     
-       
+        if (Keyboard.current.cKey.wasPressedThisFrame)
+        {
+            OnPlayerEquipmentDisplayRequested?.Invoke(secondaryInvetroySystem);
+            OnPlayerBackpackDisplayRequested?.Invoke(thirdInvetroySystem);
+        }
+
+
+
+
+
     }
 
 
