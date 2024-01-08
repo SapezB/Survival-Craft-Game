@@ -3926,7 +3926,7 @@ GameObject:
   - component: {fileID: 1740270796229021112}
   - component: {fileID: 7439965632895527959}
   - component: {fileID: 4371120683037575034}
-  - component: {fileID: 8789908794252867270}
+  - component: {fileID: 8142641365380520358}
   - component: {fileID: 5756065880444228474}
   - component: {fileID: 8935316777533875894}
   m_Layer: 7
@@ -4003,7 +4003,7 @@ CapsuleCollider:
   m_Height: 1.8845173
   m_Direction: 1
   m_Center: {x: 0, y: 0.857742, z: 0}
---- !u!114 &8789908794252867270
+--- !u!114 &8142641365380520358
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4012,13 +4012,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7350967149613237729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b570e5b71875a3418969dabe2b7ee4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 66d1bec7dbf5fd3438c2dbc26e11b812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 50
   _healthBar: {fileID: 5554762441747160095}
   hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
-  ragdoll: {fileID: 463838689969216443, guid: dfa1599583c761c408afc52041b6c509, type: 3}
+  ragdoll: {fileID: 463838689969216443, guid: 6f6eefc7c5118b0498078f843e257955, type: 3}
   attackCD: 5
   attackRange: 8.2
   aggroRange: 28.6

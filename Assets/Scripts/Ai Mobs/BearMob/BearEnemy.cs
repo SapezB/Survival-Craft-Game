@@ -115,7 +115,7 @@ public class BearEnemy : MonoBehaviour
         animator.SetTrigger("death"); // Trigger death animation using a trigger
         agent.isStopped = true; // Stop the NavMeshAgent
         hasDied = true;
-
+        player.GetComponent<HealthSystem>().GainXP(30);
         GetComponent<LootBag>().InstantitateLoot(transform.position);
         StartCoroutine(DestroyAfterDelay(3.5f)); // Adjust the time to match the length of the death animation
     }
