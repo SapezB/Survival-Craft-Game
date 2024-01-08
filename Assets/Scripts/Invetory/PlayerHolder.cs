@@ -65,7 +65,7 @@ public class PlayerHolder : CraftingHolder
      //Crafting
     public void craftItem(string itemName){
         foreach(Recipe recipe in itemRecipes){
-            if(recipe.createdItem.GetComponent<ItemData>().name == itemName)
+            if(recipe.createItem.GetComponent<ItemData>().name == itemName)
             {
                 bool haveAllIngredients = true;
                 for(int i = 0; i < recipe.requiredIngredients.Count; i++){
@@ -78,7 +78,7 @@ public class PlayerHolder : CraftingHolder
                     for(int i = 0; i < recipe.requiredIngredients.Count; i++){
                         removeIngredient(recipe.requiredIngredients[i].itemName, recipe.requiredIngredients[i].amountNeeded);
                     }
-                    GameObject craftedItem = Instantiate(recipe.createdItem, player.transform.position, Quaternion.identity);
+                    GameObject craftedItem = Instantiate(recipe.createItem, player.transform.position, Quaternion.identity);
                     craftedItem.GetComponent<ItemData>().currentQuantity = recipe.amountMade;
 
                     AddToInventory(craftedItem.GetComponent<ItemData>(),craftedItem.GetComponent<ItemData>().currentQuantity);
@@ -96,8 +96,8 @@ public class PlayerHolder : CraftingHolder
 
         int remainingAmount = amount;
 
-        foreach(Slot curslot in allInventorySlots){
-            ItemData item = curslot.getItem();
+        foreach(Slot curslot in fourthInventorySystem.slots){
+            ItemData item = curslot.ItemData;
 
             if(item != null && item.name == itemName){
                 if(item.currentQuantity >= remainingAmount){
@@ -119,9 +119,9 @@ public class PlayerHolder : CraftingHolder
 
     private bool haveIngredient(string itemName, int amount){
         int foundAmount = 0;
-        foreach(Slot curslot in allInventorySlots){
-            if(curslot.hasItem() && curslot.getItem().name == itemName){
-                foundAmount += curslot.getItem().currentQuantity;
+        foreach(Slot curslot in fourthInventorySystem.slots ){
+            if(curslot!= null && curslot.ItemData.name == itemName){
+                foundAmount += curslot.ItemData.currentQuantity;
                 
                 if(foundAmount >= amount){
                     return true;

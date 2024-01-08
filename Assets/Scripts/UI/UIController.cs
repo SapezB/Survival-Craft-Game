@@ -8,20 +8,19 @@ public class UIController : MonoBehaviour
     public DynamicInvetoryDisplay chestPanel;
     public DynamicInvetoryDisplay playerBackpackPanel;
     public DynamicInvetoryDisplay playerEquipmentPanel;
-    public DynamicInvetoryDisplay playerCraftingPanel;
+
     private void Awake()
     {
         chestPanel.gameObject.SetActive(false);
         playerBackpackPanel.gameObject.SetActive(false);
         playerEquipmentPanel.gameObject.SetActive(false);
-        playerCraftingPanel.gameObject.SetActive(false);
     }
     private void OnEnable()
     {
         Holder.OnDynamicInvetoryDisplayRequested += DisplayInventory;
         PlayerHolder.OnPlayerBackpackDisplayRequested += DisplayPlayerBackpack;
         EquipmentHolder.OnPlayerEquipmentDisplayRequested += DisplayPlayerEquipment;
-        // CraftingHolder.OnPlayerEquipmentDisplayRequested += DisplayPlayerCrafting;
+    
     }
 
     private void OnDisable()
@@ -29,6 +28,7 @@ public class UIController : MonoBehaviour
         Holder.OnDynamicInvetoryDisplayRequested -= DisplayInventory;
         PlayerHolder.OnPlayerBackpackDisplayRequested -= DisplayPlayerBackpack;
         EquipmentHolder.OnPlayerEquipmentDisplayRequested -= DisplayPlayerEquipment;
+    
     }
 
 
@@ -39,6 +39,7 @@ public class UIController : MonoBehaviour
         if (chestPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) chestPanel.gameObject.SetActive(false);
         if (playerBackpackPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) playerBackpackPanel.gameObject.SetActive(false);
         if (playerEquipmentPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) playerEquipmentPanel.gameObject.SetActive(false);
+        
     }
 
 
@@ -60,10 +61,6 @@ public class UIController : MonoBehaviour
         playerEquipmentPanel.RefreshDynamicInventory(invToDisplay);
     }
 
-    void DisplayPlayerCrafting(InventorySystem invToDisplay)
-    {
-        playerCraftingPanel.gameObject.SetActive(true);
-        playerCraftingPanel.RefreshDynamicInventory(invToDisplay);
-    }
+    
 }
 

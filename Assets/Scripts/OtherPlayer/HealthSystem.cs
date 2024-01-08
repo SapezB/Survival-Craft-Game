@@ -1,6 +1,7 @@
 using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
@@ -49,5 +50,12 @@ public class HealthSystem : MonoBehaviour
         GameObject hit = Instantiate(hitVFX, hitPosition, Quaternion.identity);
         Destroy(hit, 3f);
 
+    }
+
+    public void AddHealth()
+    {
+        
+       health += 10;
+        
     }
 }

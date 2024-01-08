@@ -7,6 +7,8 @@ public class CraftingHolder : EquipmentHolder
 {
     [SerializeField] protected int fourthInventroySize;
     [SerializeField] protected InventorySystem fourthInventorySystem;
+
+    
     public InventorySystem foruthInventroySystem => fourthInventorySystem;
 
     public static UnityAction<InventorySystem> foruthInvetnroySystem;

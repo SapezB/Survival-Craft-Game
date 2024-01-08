@@ -39,7 +39,7 @@ public class DynamicInvetoryDisplay : InventoryDisplay
 
         for (int i = 0; i < invToDisplay.InventorySize; i++)
         {
-            print(i);
+            
             var uiSlot = Instantiate(slotPrefab, transform);
             Slots.Add(uiSlot, invToDisplay.slots[i]);
             uiSlot.Init(invToDisplay.slots[i]);

@@ -4,6 +4,10 @@ using UnityEngine;
 
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEngine.UIElements;
+
 public class PlayerController : MonoBehaviour
 {
     // Third Person Controller References
@@ -88,9 +92,14 @@ public class PlayerController : MonoBehaviour
         {
             equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData.UseItem();
             equipmentSystem.DisableSlot(0);
+
             equipmentSystem.SecondaryInvetroySystem.slots[0].ClearSlot();
-           
+            equipmentSystem.SecondaryInvetroySystem.onInvetorySlotChanged?.Invoke(equipmentSystem.SecondaryInvetroySystem.slots[0]);
+
+            this.GetComponent<HealthSystem>().AddHealth();
+
         }
+        
     }
 
     private void Equip()
