@@ -20,7 +20,7 @@ public class HealthSystem : MonoBehaviour
     public int xp = 0; // Player's current XP
     public int xpForNextLevel = 1; // XP needed for next level
     public DamageDealerScript damageDealer;
-
+    public GameObject loseScreen;
     void Start()
     {
         health = maxHealth;
@@ -109,6 +109,7 @@ public class HealthSystem : MonoBehaviour
     private IEnumerator DestroyAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+        loseScreen.SetActive(true);
         Destroy(this.gameObject);
     }
 
