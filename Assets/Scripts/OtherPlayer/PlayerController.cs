@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
             equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData.UseItem();
             equipmentSystem.DisableSlot(0);
             equipmentSystem.SecondaryInvetroySystem.slots[0].ClearSlot();
-            equipmentSystem.SecondaryInvetroySystem.
+           
         }
     }
 
