@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
             equipmentSystem.SecondaryInvetroySystem.slots[0].ClearSlot();
             equipmentSystem.SecondaryInvetroySystem.onInvetorySlotChanged?.Invoke(equipmentSystem.SecondaryInvetroySystem.slots[0]);
 
-            this.GetComponent<HealthSystem>().AddHealth();
+            //this.GetComponent<HealthSystem>().AddHealth();
 
         }
         

@@ -8,18 +8,13 @@ public class DamageDealerScript : MonoBehaviour
     List<GameObject> hasDealtDamage;
 
     [SerializeField] float weaponLength;
-    [SerializeField] private float weaponDamage;
+    [SerializeField] public float weaponDamage;
 
 
     void Start()
     {
         canDealDamage = false;
         hasDealtDamage = new List<GameObject>();
-    }
-
-    public void IncreaseWeaponDamage(float amount)
-    {
-        weaponDamage += amount;
     }
 
     // Update is called once per frame
