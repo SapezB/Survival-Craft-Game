@@ -7,6 +7,8 @@ using TMPro;
 using System.Linq;
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine.UIElements;
+using System;
+using System.Reflection;
 
 public class PlayerController : MonoBehaviour
 {
@@ -61,18 +63,21 @@ public class PlayerController : MonoBehaviour
         Block();
         Kick();
         EquipAll(leftHandHolder);
-        if (equipmentSystem.SecondaryInvetroySystem.slots.Count != 0)
+        if(equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData!= null)
         {
-            if (equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData != null)
+            if (equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData.equippableItemIndex == 10)
             {
+             
                 Consume();
+                
 
             }
         }
-       
+        
+        
 
 
-     
+
 
 
 
@@ -90,10 +95,13 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData.UseItem();
-            equipmentSystem.DisableSlot(0);
 
+            
+
+            Destroy(equipmentSystem.EquippedItems[0]);
+           
             equipmentSystem.SecondaryInvetroySystem.slots[0].ClearSlot();
+           
             equipmentSystem.SecondaryInvetroySystem.onInvetorySlotChanged?.Invoke(equipmentSystem.SecondaryInvetroySystem.slots[0]);
 
             this.GetComponent<HealthSystem>().AddHealth();
@@ -118,15 +126,23 @@ public class PlayerController : MonoBehaviour
         {
             isEquipped = !isEquipped;
             playerAnim.SetBool("isCombat", true);
+<<<<<<< HEAD
+            sword.SetActive(true);
+            swordOnShoulder.SetActive(false);
+
+=======
             equipmentSystem.DisableSlot(0);
-            EquipAll(sword);
+            sword.SetActive(true);
+            swordOnShoulder.SetActive(false);
+>>>>>>> 46a13ae22b59909b0a65d1c509c375ee5590b4ff
         }
         else
         {
-            equipmentSystem.DisableSlot(0);
+       
             isEquipped = !isEquipped;
             playerAnim.SetBool("isCombat", false);
-            EquipAll(swordOnShoulder);
+            sword.SetActive(false);
+            swordOnShoulder.SetActive(true);
         }
     }
 

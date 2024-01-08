@@ -5062,6 +5062,10 @@ PrefabInstance:
       propertyPath: weaponLength
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8707828857106678079, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
+      propertyPath: weaponLength
+      value: -3.09
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

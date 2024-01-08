@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 2982272316648795361}
   - component: {fileID: 9117907072319467834}
   - component: {fileID: 6632194380660229346}
-  - component: {fileID: 5198406783384886578}
   - component: {fileID: 6298891943072749954}
+  - component: {fileID: 8060382470350379892}
   m_Layer: 7
   m_Name: Spawned Skeleton Warrior
   m_TagString: SpawnedEnemy
@@ -118,25 +118,6 @@ CapsuleCollider:
   m_Height: 1.8845173
   m_Direction: 1
   m_Center: {x: 0, y: 0.857742, z: 0}
---- !u!114 &5198406783384886578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 134789891162739389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b570e5b71875a3418969dabe2b7ee4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 3
-  _healthBar: {fileID: 2056852341654984058}
-  hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
-  ragdoll: {fileID: 463838689969216443, guid: dfa1599583c761c408afc52041b6c509, type: 3}
-  attackCD: 2
-  attackRange: 3.1
-  aggroRange: 20
 --- !u!195 &6298891943072749954
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -159,6 +140,25 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8060382470350379892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134789891162739389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b570e5b71875a3418969dabe2b7ee4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  _healthBar: {fileID: 2056852341654984058}
+  hitVFX: {fileID: 1743637094903878, guid: 021a2f7a2c5bc4449b4c64a66a050e8c, type: 3}
+  ragdoll: {fileID: 463838689969216443, guid: 6f6eefc7c5118b0498078f843e257955, type: 3}
+  attackCD: 3
+  attackRange: 1
+  aggroRange: 4
 --- !u!1 &161972192193849121
 GameObject:
   m_ObjectHideFlags: 0
@@ -4991,13 +4991,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4489677676252728369, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2221056476119100502}
   m_SourcePrefab: {fileID: 100100000, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
 --- !u!4 &2406314289374758552 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4489677676252762129, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
   m_PrefabInstance: {fileID: 2245739408624785033}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2406314289375124152 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4489677676252728369, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
+  m_PrefabInstance: {fileID: 2245739408624785033}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2221056476119100502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406314289375124152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c319e8843b35442ab92bdf66a28e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponLength: -0.16
+  weaponDamage: 4
 --- !u!1001 &2310565658749006997
 PrefabInstance:
   m_ObjectHideFlags: 0

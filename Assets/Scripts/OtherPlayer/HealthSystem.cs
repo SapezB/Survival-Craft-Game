@@ -9,6 +9,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] float health = 100;
     [SerializeField] GameObject hitVFX;
     private bool hasDied = false;
+    public GameObject deathScreen;
     //[SerializeField] GameObject ragdoll;
 
     Animator animator;
@@ -32,10 +33,12 @@ public class HealthSystem : MonoBehaviour
 
     void Die()
     {
+        deathScreen.SetActive(true);
+        Destroy(gameObject);
         if (hasDied) return;
         //Instantiate(ragdoll, transform.position, transform.rotation);
         //animator.SetTrigger("dead");
-        StartCoroutine(DestroyAfterDelay(4.1f));
+        // StartCoroutine(DestroyAfterDelay(4.1f));
         hasDied = true;
     }
 

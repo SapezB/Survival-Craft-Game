@@ -9,7 +9,7 @@ public class OpenDoor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(light.numDays >= 10){
+        if(light.numDays >= 5){
             Destroy(this.gameObject);
         }
     }

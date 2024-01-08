@@ -17,8 +17,5 @@ MonoBehaviour:
   Type: Potion
   prefab: {fileID: 1178780766418999310, guid: e968de6fab3b5094db5d9450d59ca9cc, type: 3}
   equipped: 1
-  equippableItemIndex: 0
-  name: Potion
-  description: Potion
-  currentQuantity: 1
+  equippableItemIndex: 10
   dropChance: 100
