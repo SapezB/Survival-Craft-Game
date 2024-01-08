@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
         Holder.OnDynamicInvetoryDisplayRequested += DisplayInventory;
         PlayerHolder.OnPlayerBackpackDisplayRequested += DisplayPlayerBackpack;
         EquipmentHolder.OnPlayerEquipmentDisplayRequested += DisplayPlayerEquipment;
-        CraftingHolder.OnPlayerCraftingDisplayRequested += DisplayPlayerCrafting;
+        // CraftingHolder.OnPlayerEquipmentDisplayRequested += DisplayPlayerCrafting;
     }
 
     private void OnDisable()
@@ -29,7 +29,6 @@ public class UIController : MonoBehaviour
         Holder.OnDynamicInvetoryDisplayRequested -= DisplayInventory;
         PlayerHolder.OnPlayerBackpackDisplayRequested -= DisplayPlayerBackpack;
         EquipmentHolder.OnPlayerEquipmentDisplayRequested -= DisplayPlayerEquipment;
-        CraftingHolder.OnPlayerCraftingDisplayRequested -= DisplayPlayerCrafting;
     }
 
 
@@ -40,7 +39,6 @@ public class UIController : MonoBehaviour
         if (chestPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) chestPanel.gameObject.SetActive(false);
         if (playerBackpackPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) playerBackpackPanel.gameObject.SetActive(false);
         if (playerEquipmentPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) playerEquipmentPanel.gameObject.SetActive(false);
-        if (playerCraftingPanel.gameObject.activeInHierarchy && Keyboard.current.escapeKey.wasPressedThisFrame) playerCraftingPanel.gameObject.SetActive(false);
     }
 
 
