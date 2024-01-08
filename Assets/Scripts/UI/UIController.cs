@@ -21,7 +21,7 @@ public class UIController : MonoBehaviour
         Holder.OnDynamicInvetoryDisplayRequested += DisplayInventory;
         PlayerHolder.OnPlayerBackpackDisplayRequested += DisplayPlayerBackpack;
         EquipmentHolder.OnPlayerEquipmentDisplayRequested += DisplayPlayerEquipment;
-        CraftingHolder.OnPlayerEquipmentDisplayRequested += DisplayPlayerCrafting;
+        // CraftingHolder.OnPlayerEquipmentDisplayRequested += DisplayPlayerCrafting;
     }
 
     private void OnDisable()
