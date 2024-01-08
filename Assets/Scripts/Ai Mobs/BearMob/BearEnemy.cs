@@ -116,7 +116,7 @@ public class BearEnemy : MonoBehaviour
         agent.isStopped = true; // Stop the NavMeshAgent
         hasDied = true;
 
-        GetComponent<LootBag>().InstantitateLoot(transform.position);
+        // GetComponent<LootBag>().InstantitateLoot(transform.position);
         StartCoroutine(DestroyAfterDelay(3.5f)); // Adjust the time to match the length of the death animation
     }
 
