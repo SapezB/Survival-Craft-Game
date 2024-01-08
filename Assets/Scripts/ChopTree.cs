@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChopTree : MonoBehaviour
 {
-    public static float maxHealth = 3;
+    [SerializeField] private static float maxHealth = 3;
     public GameObject drop;
     public GameObject appleDrop;
     private float health = maxHealth;

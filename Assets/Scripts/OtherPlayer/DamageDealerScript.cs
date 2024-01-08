@@ -55,11 +55,11 @@ public class DamageDealerScript : MonoBehaviour
                     }
                     else if (hit.transform.TryGetComponent(out ChopTree tree))
                     {
-                        tree.TakeDamage(weaponDamage);
+                        tree.TakeDamage(1);
                     }
                     else if (hit.transform.TryGetComponent(out MineMineral mineral))
                     {
-                        mineral.TakeDamage(weaponDamage);
+                        mineral.TakeDamage(1);
                     }
                 }
             }
