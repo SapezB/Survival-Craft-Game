@@ -138,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: 859c3def7b0fdca4ba4a59bb97a3cb47, type: 3}
       propertyPath: m_Name
-      value: Barbarian 1
+      value: Barbarian BOSS
       objectReference: {fileID: 0}
     - target: {fileID: 100028, guid: 859c3def7b0fdca4ba4a59bb97a3cb47, type: 3}
       propertyPath: m_Layer
@@ -1140,7 +1140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afca0cd3cf71ca3409eb6e1a4c27d788, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shieldDamage: 10
+  shieldDamage: 30
   knockbackForce: 100
   knockbackDuration: 2
 --- !u!65 &2270309703444955153
@@ -1270,7 +1270,7 @@ PrefabInstance:
       objectReference: {fileID: 4300042, guid: 859c3def7b0fdca4ba4a59bb97a3cb47, type: 3}
     - target: {fileID: 5508085357228069910, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
       propertyPath: weaponDamage
-      value: 1
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5508085357228069910, guid: 39ec6af3eb8c70848b3da75dbf39628f, type: 3}
       propertyPath: weaponLength
