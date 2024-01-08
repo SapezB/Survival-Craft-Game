@@ -21,11 +21,16 @@ public class PassiveEnemy : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(waitfewseconds());
         health = maxHealth;
         _healthBar.UpdateHealthBar(maxHealth, health);
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         timeToNextRoaming = roamingInterval;
+    }
+
+    IEnumerator waitfewseconds(){
+        yield return new WaitForSeconds(3);
     }
 
     void Update()

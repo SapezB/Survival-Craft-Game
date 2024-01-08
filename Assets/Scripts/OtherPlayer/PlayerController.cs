@@ -119,14 +119,16 @@ public class PlayerController : MonoBehaviour
             isEquipped = !isEquipped;
             playerAnim.SetBool("isCombat", true);
             equipmentSystem.DisableSlot(0);
-            EquipAll(sword);
+            sword.SetActive(true);
+            swordOnShoulder.SetActive(false);
         }
         else
         {
             equipmentSystem.DisableSlot(0);
             isEquipped = !isEquipped;
             playerAnim.SetBool("isCombat", false);
-            EquipAll(swordOnShoulder);
+            sword.SetActive(false);
+            swordOnShoulder.SetActive(true);
         }
     }
 

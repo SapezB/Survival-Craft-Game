@@ -29,6 +29,7 @@ public class BarbarianEnemy : MonoBehaviour
     private bool stunApplied = false;
     private bool isStunnedOrBuffed = false; // New variable to check if stunned or buffed
     [SerializeField] private float resumeDelay = 2f; // Delay after which boss resumes behavior
+    public GameObject winScreen;
 
     void Start()
     {
@@ -105,6 +106,8 @@ public class BarbarianEnemy : MonoBehaviour
         hasDied = true;
         GetComponent<LootBag>().InstantitateLoot(transform.position);
         StartCoroutine(DestroyAfterDelay(3.5f));
+        winScreen.SetActive(true);
+
     }
 
     private IEnumerator DestroyAfterDelay(float delay)
