@@ -6,7 +6,7 @@ using UnityEngine;
 public class Slot 
 {
     [SerializeField] private ItemData itemData;
-    [SerializeField] private int stackSize;
+    public int stackSize;
 
     public ItemData ItemData => itemData;
 
@@ -86,4 +86,19 @@ public class Slot
         splitStack = new Slot(itemData,halfStack);
         return true;
     }
+
+    public int getAmount(){
+        return stackSize;
+    }
+
+    public ItemData getItem()
+    {
+        return itemData;
+    }
+
+    public bool hasItem()
+    {
+        return itemData ? true : false;
+    }
+
 }
