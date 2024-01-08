@@ -39,7 +39,6 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        thirdPersonController.mouseSensitivity = thirdPersonController.mouseSensitivity + 0.01f;
         
     }
     void Pause()

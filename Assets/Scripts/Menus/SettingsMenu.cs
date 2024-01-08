@@ -29,7 +29,7 @@ public class Settings : MonoBehaviour
     private void Start()
     {
         // Initialize the slider value to match the current mouse sensitivity
-        sensitivitySlider.value = thirdPersonController.mouseSensitivity;
+        
 
         // Add the slider event listener
         sensitivitySlider.onValueChanged.AddListener(SetMouseSensitivity);
