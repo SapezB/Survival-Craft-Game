@@ -5,7 +5,7 @@ using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-public class PlayerHolder : EquipmentHolder
+public class PlayerHolder : CraftingHolder
 {
   
     [SerializeField] protected int thirdInventroySize;
@@ -40,7 +40,7 @@ public class PlayerHolder : EquipmentHolder
 
         if (Keyboard.current.cKey.wasPressedThisFrame)
         {
-            OnPlayerEquipmentDisplayRequested?.Invoke(secondaryInvetroySystem);
+            OnPlayerCraftingDisplayRequested.Invoke(foruthInventroySystem);
             OnPlayerBackpackDisplayRequested?.Invoke(thirdInvetroySystem);
         }
 
