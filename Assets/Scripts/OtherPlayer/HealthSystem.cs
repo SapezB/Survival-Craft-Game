@@ -6,15 +6,19 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] float health = 100;
+    [SerializeField] float maxHealth = 100;
+    [SerializeField] private PlayerHealthBar _healthBar;
     [SerializeField] GameObject hitVFX;
     private bool hasDied = false;
+    private float health;
     public GameObject deathScreen;
     //[SerializeField] GameObject ragdoll;
 
     Animator animator;
     void Start()
     {
+        health = maxHealth;
+        _healthBar.UpdateHealthBar(maxHealth, health);
         animator = GetComponent<Animator>();
     }
 
@@ -22,6 +26,7 @@ public class HealthSystem : MonoBehaviour
     {
         if (hasDied) return;
         health -= damageAmount;
+        _healthBar.UpdateHealthBar(maxHealth, health);
         animator.SetTrigger("damage");
 
 
@@ -33,12 +38,10 @@ public class HealthSystem : MonoBehaviour
 
     void Die()
     {
-        deathScreen.SetActive(true);
-        Destroy(gameObject);
         if (hasDied) return;
         //Instantiate(ragdoll, transform.position, transform.rotation);
-        //animator.SetTrigger("dead");
-        // StartCoroutine(DestroyAfterDelay(4.1f));
+        animator.SetTrigger("dead");
+        StartCoroutine(DestroyAfterDelay(4.1f));
         hasDied = true;
     }
 
@@ -46,6 +49,7 @@ public class HealthSystem : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         Destroy(this.gameObject);
+        deathScreen.SetActive(true);
     }
     public void HitVFX(Vector3 hitPosition)
     {
