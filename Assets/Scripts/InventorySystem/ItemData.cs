@@ -9,6 +9,7 @@ public class ItemData : ScriptableObject
     public int MaxStackSize;
     public string Type;
     public GameObject prefab;
+    public bool equipped = false;
 
     public int equippableItemIndex = 1;
 }

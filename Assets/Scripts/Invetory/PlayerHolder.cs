@@ -13,8 +13,7 @@ public class PlayerHolder : EquipmentHolder
 
     [SerializeField] protected InventorySystem thirdInvetroySystem;
 
-    public List<GameObject> equippableItems = new List<GameObject>();
-
+    
     public InventorySystem ThirdInvetroySystem => thirdInvetroySystem;
 
 
@@ -39,7 +38,9 @@ public class PlayerHolder : EquipmentHolder
             OnPlayerBackpackDisplayRequested?.Invoke(thirdInvetroySystem);
         }
 
-       
+      
+  
+     
        
     }
 
@@ -53,6 +54,8 @@ public class PlayerHolder : EquipmentHolder
 
         return false;
     }
+
+    
 
     
 }

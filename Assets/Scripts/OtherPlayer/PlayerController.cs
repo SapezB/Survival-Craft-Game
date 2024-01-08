@@ -15,6 +15,13 @@ public class PlayerController : MonoBehaviour
     private GameObject Potion;
     [SerializeField]
     private GameObject swordOnShoulder;
+    [SerializeField]
+    private GameObject leftHandHolder;
+    [SerializeField]
+    private EquipmentHolder equipmentSystem;
+
+    private int counter = 0;
+
     public bool isEquipping;
     public bool isEquipped;
     public bool isPotioning;
@@ -31,6 +38,9 @@ public class PlayerController : MonoBehaviour
     private float timeSinceAttack;
     public int currentAttack = 0;
 
+    private void Start()
+    {
+        equipmentSystem = this.GetComponent<EquipmentHolder>(); }
     private void Update()
     {
         timeSinceAttack += Time.deltaTime;
@@ -40,6 +50,26 @@ public class PlayerController : MonoBehaviour
         EquipPotion();
         Block();
         Kick();
+
+        if (equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData != null )
+        {
+            if(equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData.equippableItemIndex == 1)
+            EquipAll(swordOnShoulder);
+            counter++;
+        }
+        
+
+    }
+
+    private void EquipAll(GameObject position)
+    {
+        equipmentSystem.EnableEquipment(position);
+
+    }
+    private void DisableAll()
+    {
+   
+        equipmentSystem.DisableEquipment();
     }
 
     private void Equip()
@@ -55,17 +85,17 @@ public class PlayerController : MonoBehaviour
     {
         if (!isEquipped)
         {
-            sword.SetActive(true);
-            swordOnShoulder.SetActive(false);
             isEquipped = !isEquipped;
             playerAnim.SetBool("isCombat", true);
+            equipmentSystem.DisableSlot(0);
+            EquipAll(sword);
         }
         else
         {
-            sword.SetActive(false);
-            swordOnShoulder.SetActive(true);
+            equipmentSystem.DisableSlot(0);
             isEquipped = !isEquipped;
             playerAnim.SetBool("isCombat", false);
+            EquipAll(swordOnShoulder);
         }
     }
 

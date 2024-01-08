@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3207830843428821854}
   - component: {fileID: 5793166287616889135}
   - component: {fileID: 191698217774280867}
-  - component: {fileID: 1525601344459737333}
   m_Layer: 0
   m_Name: Potion_14 (1)
   m_TagString: Untagged
@@ -30,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 57.028015, y: -602.10254, z: 332.547}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,24 +107,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1229567024321823635, guid: 64ae85373e1f8da42b9137df4d0e22b5, type: 3}
---- !u!135 &1525601344459737333
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178780766418999310}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.09489322
-  m_Center: {x: -0.000000011175871, y: 0.09489322, z: 0.000000044703484}
