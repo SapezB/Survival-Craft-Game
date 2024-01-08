@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.UI;
+using TMPro;
 public class PlayerController : MonoBehaviour
 {
     // Third Person Controller References
@@ -19,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private GameObject leftHandHolder;
     [SerializeField]
     private EquipmentHolder equipmentSystem;
+ 
+
 
     private int counter = 0;
 
@@ -40,7 +44,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        equipmentSystem = this.GetComponent<EquipmentHolder>(); }
+        equipmentSystem = this.GetComponent<EquipmentHolder>();
+    
+    }
     private void Update()
     {
         timeSinceAttack += Time.deltaTime;
@@ -50,29 +56,45 @@ public class PlayerController : MonoBehaviour
         EquipPotion();
         Block();
         Kick();
-
-        if (equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData != null )
+        EquipAll(leftHandHolder);
+        if (equipmentSystem.SecondaryInvetroySystem.slots.Count != 0)
         {
-            if(equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData.equippableItemIndex == 1)
-            EquipAll(swordOnShoulder);
-            counter++;
+            if (equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData != null)
+            {
+                Consume();
+
+            }
         }
-        
+       
+
+
+     
+
+
+
 
     }
+
 
     private void EquipAll(GameObject position)
     {
         equipmentSystem.EnableEquipment(position);
 
     }
-    private void DisableAll()
+    
+    private void Consume()
     {
-   
-        equipmentSystem.DisableEquipment();
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            equipmentSystem.SecondaryInvetroySystem.slots[0].ItemData.UseItem();
+            equipmentSystem.DisableSlot(0);
+            equipmentSystem.SecondaryInvetroySystem.slots[0].ClearSlot();
+            equipmentSystem.SecondaryInvetroySystem.
+        }
     }
 
     private void Equip()
+
     {
         if (Input.GetKeyDown(KeyCode.R) && playerAnim.GetBool("Grounded"))
         {

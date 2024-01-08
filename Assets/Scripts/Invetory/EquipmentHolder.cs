@@ -51,20 +51,7 @@ public class EquipmentHolder : Holder
         
                 }
 
-                if(secondaryInvetroySystem.slots[i].ItemData.equippableItemIndex == 1 && secondaryInvetroySystem.slots[i].ItemData.equipped == false)
-                {
-                    secondaryInvetroySystem.slots[i].ItemData.equipped = true;
-                    GameObject item = Instantiate(equippableItems[1], parent.transform);
-
-                    equippedItems.Add(item);
-                }
-                if(secondaryInvetroySystem.slots[i].ItemData.equippableItemIndex == 2 && secondaryInvetroySystem.slots[i].ItemData.equipped == false)
-                {
-                    secondaryInvetroySystem.slots[i].ItemData.equipped = true;
-                    GameObject item = Instantiate(equippableItems[2], parent.transform);
-
-                    equippedItems.Add(item);
-                }
+                
             }
 
         }

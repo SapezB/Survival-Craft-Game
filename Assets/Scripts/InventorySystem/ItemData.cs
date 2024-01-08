@@ -12,4 +12,11 @@ public class ItemData : ScriptableObject
     public bool equipped = false;
 
     public int equippableItemIndex = 1;
+    
+
+    public void UseItem()
+    {
+        Debug.Log("item used");
+    }
+
 }
